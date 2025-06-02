@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/mi1WNrHU)
-# Proyecto de C++ - [Nombre del Juego]
+# Proyecto de C++ - Victor Frankeinstein V Geneve
 
 ## Descripción del Proyecto
 
@@ -10,12 +10,12 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 
 ## Equipo
 
-- **Nombre del equipo:** [Nombre del equipo]
+- **Nombre del equipo:** git commit-  "m" 
 
 ### Integrantes del equipo
 
-1. **Nombre completo:** [Nombre del estudiante 1]  
-   **Carnet:** [Carnet del estudiante 1]
+1. **Nombre completo:** Steven Eduardo Barrios Najarro
+   **Carnet:** 00100925
 
 2. **Nombre completo:** [Nombre del estudiante 2]  
    **Carnet:** [Carnet del estudiante 2]
@@ -23,7 +23,7 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 3. **Nombre completo:** [Nombre del estudiante 3]  
    **Carnet:** [Carnet del estudiante 3]
 
-(Agregar más integrantes si es necesario)
+
 
 ## Instrucciones de Ejecución
 
