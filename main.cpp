@@ -64,16 +64,19 @@ int main()
 //variables usadas
 char llegarTarde; //pregunta evelyn pq llegaste tarde
 char pickUpEvidence; 
+char victorPresentation; //eliges como presentarte a victor por primera vez
 
 //Aqui hacer un un Array donde se guarde la Evidencia que se vaya recogiendo
 //Aqui se aplicaria un metodo de para guardar el nombre del usuario en la clase Judador 
 
   
 string linea; 
+string victorExpediente;
 ifstream archivo ("n1.txt");
 ifstream victorFile ("victorCharacteristics.txt"); //vincula el expediente de victor 
 ifstream afterVictorFile("refleccionDespuesDeLeerCaso.txt"); //vincula pesamientos despues de leer expediente
 ifstream buscandoVictor("buscandoVictor.txt");
+
 
 while (getline(archivo, linea)){    //esto ayuda a que se lea todo el texto del codigo
 cout << linea << endl;
@@ -85,11 +88,11 @@ cout << linea << endl;
 
     while (true){
     cout << " a.)  Mi alarma no sono \n b.) Dile la verdad \n c.) Mi perro se murio \n ";
-    cin >> llegarTarde; //convertir cualquier letra en minuscula
+    cin >> llegarTarde;
+    llegarTarde = tolower(llegarTarde); //hace que cualquier input sea minuscula
 
     if (llegarTarde =='a' || llegarTarde == 'c'){
         cout << "\nDeja de ser mentiroso " /*nombre de usuario*/<< ". \nTe vi en la cafeteria tomandote un espresso en mi camino al trabajo.\nSi vas a mentir al menos hazlo bien \n"; 
-        llegarTarde = tolower(llegarTarde); //hace que cualquier input sea minuscula
         break; 
 
     } else if (llegarTarde == 'b'){
@@ -109,8 +112,10 @@ cout << linea << endl;
             //stores Victor files into "maletin"
 
             while(getline(victorFile,linea )){
-                cout << linea <<endl;
-            }
+                victorExpediente = victorExpediente+linea + "\n";
+            } 
+            victorFile.close(); // esto cierra la variable y ayuda a liberar memoria
+            cout << victorExpediente<< endl;
             break; 
         }
         else{
@@ -130,6 +135,27 @@ cout << linea << endl;
     while (getline(buscandoVictor, linea)){ 
         cout << linea << endl;
     }
+
+    cout << "Como decides presentarte a Victor?";
+    cout << "a.) De una manera fria"<< endl;
+    cout << "b.) De una manera Empatica" << endl;
+
+    cin >> victorPresentation; 
+    victorPresentation = tolower(victorPresentation);
+
+    if (victorPresentation == 'a'){
+        cout << "Soy tu abogado, no quiero rodeos, dime porque estas aca;";
+        break;
+    }else if (victorPresentation == 'b')
+    {
+        cout << "Eres Victor no, yo soy" << /*nombre del jugador*/ "y sere tu abogado en este caso. Resperira profundo y cuentame. Como acabaste aqui?  ";
+        break; 
+    } else{
+        cout << "Por favor, escoge la una de las respuestas proporcionadas";
+
+      }
+    
+
     
 
 
