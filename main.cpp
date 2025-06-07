@@ -3,8 +3,9 @@
 #include <fstream> //esta libreria es para agregar archivos .txt
 #include <cctype> // to lowercase some input from the user to minimize erros
 using namespace std;
-//esta clase se utiliza para declara cada una de las 6 evidencias por caso (18 en total)
-class Evidencia {
+
+/*
+class Evidencia { //esta clase se utiliza para declara cada una de las 6 evidencias por caso (18 en total)
     public: 
     string nombre;
     string contenidoEvidencia; //tratar de buscar algo mejor donde se pueda guardar todo lo de la evidencia 
@@ -15,7 +16,6 @@ class Evidencia {
     string pregunta3; 
     string pregunta4; 
     string pregunta5;  
-    public: 
     Evidencia(string nombre, string contenidoEvidencia, int puntosMorales, int puntosPosiblesCaso, string pregunta1, string pregunta2, string pregunta3, string pregunta4, string pregunta5){
        this -> nombre = nombre;
        this -> contenidoEvidencia = contenidoEvidencia;
@@ -28,7 +28,7 @@ class Evidencia {
         pregunta5 = pregunta5;
     }
 };
-
+*/
 class Jugador {
 };
 
@@ -51,12 +51,32 @@ class Menu{
     void seleccionarCargo();
 };
 
+struct Evidencia
+{
+    int puntosMoralidad;
+    int puntosPosibles;
+    int tiempo;
+    string pregunta1;
+    string pregunta2;
+    string pregunta3;
+    string pregunta4;
+    string pregunta5;
+};
+
+
+
 //para esta clase, apreder el manejo de archivos .txt para poder cargar la evidencia desde afuera
 class archivoManager{
     /*vector<Evidencia> cargarEvidencias (string ruta)
     vector<Personaje> cargarTestimonios (string ruta)
     void mostrarArchivo (string Ruta) // para mostrar una carta o ecena */
 };
+
+Evidencia evidenciaC1E1; 
+
+
+
+
 
 
 int main()
@@ -69,13 +89,15 @@ char victorPresentation; //eliges como presentarte a victor por primera vez
 //Aqui hacer un un Array donde se guarde la Evidencia que se vaya recogiendo
 //Aqui se aplicaria un metodo de para guardar el nombre del usuario en la clase Judador 
 
-  
+//llama a los archivos en carpeta textFiles para ser leeidos
 string linea; 
 string victorExpediente;
-ifstream archivo ("n1.txt");
-ifstream victorFile ("victorCharacteristics.txt"); //vincula el expediente de victor 
-ifstream afterVictorFile("refleccionDespuesDeLeerCaso.txt"); //vincula pesamientos despues de leer expediente
-ifstream buscandoVictor("buscandoVictor.txt");
+ifstream archivo ("textFiles/n1.txt");
+ifstream victorFile ("textFiles/victorCharacteristics.txt"); //vincula el expediente de victor 
+ifstream afterVictorFile("textFiles/refleccionDespuesDeLeerCaso.txt"); //vincula pesamientos despues de leer expediente
+ifstream buscandoVictor("textFiles/buscandoVictor.txt");
+ifstream victorArrepentido("textFiles/VictorArrepentido.txt");
+ifstream case1Evidence1txt("textFiles/case1Evidence1.txt");
 
 
 while (getline(archivo, linea)){    //esto ayuda a que se lea todo el texto del codigo
@@ -144,19 +166,61 @@ cout << linea << endl;
     victorPresentation = tolower(victorPresentation);
 
     if (victorPresentation == 'a'){
-        cout << "Soy tu abogado, no quiero rodeos, dime porque estas aca;";
-        break;
+        cout << "Usuario: "<< endl;
+        cout << "   Soy tu abogado, no quiero rodeos, dime porque estas aca;"<< endl;
+        cout << "Victor: "<< endl;
+        cout << "   Si... soy yo. Dime, que tienes en mente? "<< endl;
     }else if (victorPresentation == 'b')
     {
-        cout << "Eres Victor no, yo soy" << /*nombre del jugador*/ "y sere tu abogado en este caso. Resperira profundo y cuentame. Como acabaste aqui?  ";
-        break; 
+       cout << "Usuario: "<< endl;
+        cout << "   Eres Victor no, yo soy" << /*nombre del jugador*/ "y sere tu abogado en este caso. Resperira profundo y cuentame. Como acabaste aqui?  "<< endl;
+        cout << "*Victor solo se queda viendo a la nada sin decir nada, solo ves que mil y un pensamientos pasan por su mente * "<< endl;
+        cout << "   Victor, se que puede ser dificil pero, por que no me explicas como fue que paso todo?\n Tienes a medio pueblo que te quiere ver colgado, si quieres salir de aqui...\n Necesitare que me cuentes como es que has terminado en esta situacion" << endl;
+        cout << "Victor: "<< endl;
+        cout << "   Perdon... mucho pensar en lo que me aguarda el futuro esta haciendo que pierda la cordura.\n";
+    
     } else{
         cout << "Por favor, escoge la una de las respuestas proporcionadas";
 
       }
     
+    while (getline(victorArrepentido, linea)){ 
+        cout << linea << endl;
+    }
 
-    
+
+cout << "Que te gustaria preguntarle a Victor Primero?\n";
+cout << " a). ¿Como fue tu infancia?\n b). ¿Como hiciste a la craitura?\n c). ¿Como terminaste en la carcel en si?"<< endl;
+
+/*Ingresar if-else statment con la leida de sus descriptivos textos
+ (Victor infancia, VictorCreacionCreatura, victorHowCarcel)*/
+
+
+ cout << "Usuario: "<< endl;
+ cout << "  Ya que tocamos el tema de los cargos... Creo que es hora que hablemos de ellos"<<endl;
+
+ cout << "Victor: "<< endl;
+ cout << "  Si... creo que tienes razon " /*nombre del usuario*/ << ". \n   Dime, de que cargos estoy siento inputado."<< endl;
+ 
+ //Ingresar el texto morado en la sesscion Historia de Notion
+ //Guardarlo en un .txt file
+
+ cout << "\nVictor: ";
+ cout << "  Cual Evidencia quieres escuchar?  \n";
+
+ //Aqui hacer un loop de evidencia que se pueden crear en un vector y que
+ //a medida el juagador vaya seleccionando las evidencia del caso1 estas 
+ //vayan desaparaciendo del menu.
+ //guardar la seleccion de evidencia tal vez en otro vector, en el que se pueda acceder a cualquier rato 
+
+ //hacer cada uno de estos para cada caso. Los casos estan en Notion
+ while (getline(case1Evidence1txt, linea)){ 
+        cout << linea << endl;
+    }
+
+
+
+
 
 
 
