@@ -4,45 +4,17 @@
 #include <cctype> // to lowercase some input from the user to minimize erros
 using namespace std;
 
-/*
-class Evidencia { //esta clase se utiliza para declara cada una de las 6 evidencias por caso (18 en total)
-    public: 
-    string nombre;
-    string contenidoEvidencia; //tratar de buscar algo mejor donde se pueda guardar todo lo de la evidencia 
-    int puntosMorales; 
-    int puntosPosiblesCaso; 
-    string pregunta1 ;
-    string pregunta2; 
-    string pregunta3; 
-    string pregunta4; 
-    string pregunta5;  
-    Evidencia(string nombre, string contenidoEvidencia, int puntosMorales, int puntosPosiblesCaso, string pregunta1, string pregunta2, string pregunta3, string pregunta4, string pregunta5){
-       this -> nombre = nombre;
-       this -> contenidoEvidencia = contenidoEvidencia;
-        puntosMorales = puntosMorales;
-        puntosPosiblesCaso = puntosPosiblesCaso;
-        pregunta1 = pregunta1; 
-        pregunta2 = pregunta2;
-        pregunta3 = pregunta3;
-        pregunta4 = pregunta4;
-        pregunta5 = pregunta5;
-    }
-};
-*/
-class Jugador {
+struct Jugador { //este struct sirve para ir guardando las estadisticas del usuario
+    string nombreJugador;
+    int puntosMoraliadaTotales;
+    int puntosJuicioTotales;
 };
 
-class Humanos {
+struct cargo{ //este struct sirve para ir guardando los cargos 
+    string nombreCargo; 
+    int puntosJuicioParaGanar; 
+    int puntosMoraliadBien;
 
-};
-
-class Personajes {
-public: 
-    string nombre; 
-    string ocupacion; 
-    string relacionConVictor; 
-    int edad; 
-    string testimonio; 
 
 };
 
@@ -51,8 +23,9 @@ class Menu{
     void seleccionarCargo();
 };
 
-struct Evidencia
+struct Evidencia // este struct sirve para crear los 18 tipos de evidencia que tendremos que usar en el juego
 {
+    string nombreEvidencia;
     int puntosMoralidad;
     int puntosPosibles;
     int tiempo;
@@ -61,6 +34,12 @@ struct Evidencia
     string pregunta3;
     string pregunta4;
     string pregunta5;
+    
+    void imprimir (){ //Metodo para imprimir el nombre de la evidencia y el tiempo que le tomara al usuario
+        cout << "Nombre de Evidencia: " << nombreEvidencia << endl;
+        cout << "Te tomara alrededor de " << tiempo << " el conseguir esta evidencia";
+
+    }
 };
 
 
@@ -72,22 +51,19 @@ class archivoManager{
     void mostrarArchivo (string Ruta) // para mostrar una carta o ecena */
 };
 
-Evidencia evidenciaC1E1; 
-
-
-
-
-
 
 int main()
 {
 //variables usadas
-char llegarTarde; //pregunta evelyn pq llegaste tarde
+char llegarTarde; 
 char pickUpEvidence; 
-char victorPresentation; //eliges como presentarte a victor por primera vez
+char victorPresentation;
 
 //Aqui hacer un un Array donde se guarde la Evidencia que se vaya recogiendo
 //Aqui se aplicaria un metodo de para guardar el nombre del usuario en la clase Judador 
+
+
+
 
 //llama a los archivos en carpeta textFiles para ser leeidos
 string linea; 
@@ -131,7 +107,7 @@ cout << linea << endl;
     while (true){
          cin >> pickUpEvidence;
         if (pickUpEvidence == 'x'){
-            //stores Victor files into "maletin"
+            //make something to store Victor files into "maletin"
 
             while(getline(victorFile,linea )){
                 victorExpediente = victorExpediente+linea + "\n";
