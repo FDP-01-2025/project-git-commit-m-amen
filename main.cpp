@@ -1,4 +1,4 @@
-
+// mover todos los structs a sus propios documentos .h
 #include <iostream>
 #include <fstream> //esta libreria es para agregar archivos .txt
 #include <cctype> // to lowercase some input from the user to minimize erros
