@@ -14,8 +14,6 @@ struct cargo{ //este struct sirve para ir guardando los cargos
     string nombreCargo; 
     int puntosJuicioParaGanar; 
     int puntosMoraliadBien;
-
-
 };
 
 class Menu{
@@ -26,8 +24,8 @@ class Menu{
 struct Evidencia // este struct sirve para crear los 18 tipos de evidencia que tendremos que usar en el juego
 {
     string nombreEvidencia;
-    int puntosMoralidad;
     int puntosPosibles;
+    int puntosMoralidad;
     int tiempo;
     string pregunta1;
     string pregunta2;
@@ -59,6 +57,22 @@ char llegarTarde;
 char pickUpEvidence; 
 char victorPresentation;
 
+
+
+//Nombre de las Evidencias del Caso 1 con sus respectivos Puntajes 
+Evidencia E1C1{"No Status de la creatura", 3, 2, 6};
+
+Evidencia E1C2{"Testimonio de la creatura", 4, 1, 8};
+
+Evidencia E1C3{"Propio Testimoio de Victima", 1, 4, 2};
+
+Evidencia E1C4{"Diario de Victor", 3, 2, 6};
+
+Evidencia E1C5{"Testimonio de Padre Vander", 1, 4,2 };
+
+Evidencia E1C6 {"Argumento Bien Comun", 2, 3, 4};
+
+
 //Aqui hacer un un Array donde se guarde la Evidencia que se vaya recogiendo
 //Aqui se aplicaria un metodo de para guardar el nombre del usuario en la clase Judador 
 
@@ -75,6 +89,10 @@ ifstream buscandoVictor("textFiles/buscandoVictor.txt");
 ifstream victorArrepentido("textFiles/VictorArrepentido.txt");
 ifstream case1Evidence1txt("textFiles/case1Evidence1.txt");
 
+
+
+cout << "Ingresa tu nombre";
+//hacer un cin en donde se guarde el nombre del usuario en la variable nombreJugador del Struct: Jugador
 
 while (getline(archivo, linea)){    //esto ayuda a que se lea todo el texto del codigo
 cout << linea << endl;
