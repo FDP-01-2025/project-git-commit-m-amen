@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream> //esta libreria es para agregar archivos .txt
 #include <cctype> // to lowercase some input from the user to minimize erros
+#include "Evidencia.h" // usa libreria archivo evidencia
 using namespace std;
 
 struct Jugador { //este struct sirve para ir guardando las estadisticas del usuario
@@ -21,24 +22,6 @@ class Menu{
     void seleccionarCargo();
 };
 
-struct Evidencia // este struct sirve para crear los 18 tipos de evidencia que tendremos que usar en el juego
-{
-    string nombreEvidencia;
-    int puntosPosibles;
-    int puntosMoralidad;
-    int tiempo;
-    string pregunta1;
-    string pregunta2;
-    string pregunta3;
-    string pregunta4;
-    string pregunta5;
-    
-    void imprimir (){ //Metodo para imprimir el nombre de la evidencia y el tiempo que le tomara al usuario
-        cout << "Nombre de Evidencia: " << nombreEvidencia << endl;
-        cout << "Te tomara alrededor de " << tiempo << " el conseguir esta evidencia";
-
-    }
-};
 
 
 
@@ -56,21 +39,43 @@ int main()
 char llegarTarde; 
 char pickUpEvidence; 
 char victorPresentation;
+char victorOption, confirm;
+int optionEvidencia;
 
 
 
 //Nombre de las Evidencias del Caso 1 con sus respectivos Puntajes 
-Evidencia E1C1{"No Status de la creatura", 3, 2, 6};
+Evidencia e1, e2, e3, e4, e5, e6;
 
-Evidencia E1C2{"Testimonio de la creatura", 4, 1, 8};
+e1.nombreEvidencia = "No Status de la creatura";
+e1.tiempo = 3;
+e1.puntosMoralidad = 2;
+e1.puntosPosibles = 6;
 
-Evidencia E1C3{"Propio Testimoio de Victima", 1, 4, 2};
+e2.nombreEvidencia = "Testimonio de la creatura";
+e2.tiempo = 4;
+e2.puntosMoralidad = 1;
+e2.puntosPosibles = 8;
 
-Evidencia E1C4{"Diario de Victor", 3, 2, 6};
+e3.nombreEvidencia = "Propio Testimoio de Victima";
+e3.tiempo = 1;
+e3.puntosMoralidad = 4;
+e3.puntosPosibles = 2;
 
-Evidencia E1C5{"Testimonio de Padre Vander", 1, 4,2 };
+e4.nombreEvidencia = "Diario de Victor";
+e4.tiempo = 3;
+e4.puntosMoralidad = 2;
+e4.puntosPosibles = 6;
 
-Evidencia E1C6 {"Argumento Bien Comun", 2, 3, 4};
+e5.nombreEvidencia = "Testimonio de Padre Vander";
+e5.tiempo = 1;
+e5.puntosMoralidad = 4;
+e5.puntosPosibles = 2;
+
+e6.nombreEvidencia = "Argumento Bien Comun";
+e6.tiempo = 2;
+e6.puntosMoralidad = 3;
+e6.puntosPosibles = 4;
 
 
 //Aqui hacer un un Array donde se guarde la Evidencia que se vaya recogiendo
@@ -88,6 +93,11 @@ ifstream afterVictorFile("textFiles/refleccionDespuesDeLeerCaso.txt"); //vincula
 ifstream buscandoVictor("textFiles/buscandoVictor.txt");
 ifstream victorArrepentido("textFiles/VictorArrepentido.txt");
 ifstream case1Evidence1txt("textFiles/case1Evidence1.txt");
+ifstream victorInfancia ("textFiles/victorInfancia.txt");
+ifstream victorCreacionCreatura ("textFiles/victorCreacionCreatura.txt");
+ifstream victorHowCarcel ("textFiles/victorHowCarcel.txt");
+ifstream HistoriaCase1 ("textFiles/HistoriaCase1.txt");
+
 
 
 
@@ -185,10 +195,28 @@ cout << linea << endl;
 
 cout << "Que te gustaria preguntarle a Victor Primero?\n";
 cout << " a). ¿Como fue tu infancia?\n b). ¿Como hiciste a la craitura?\n c). ¿Como terminaste en la carcel en si?"<< endl;
+cin >> victorOption;
+victorOption = tolower(victorOption);
 
-/*Ingresar if-else statment con la leida de sus descriptivos textos
- (Victor infancia, VictorCreacionCreatura, victorHowCarcel)*/
+if (victorOption == 'a'){
+    while (getline(victorInfancia, linea)){
+        cout << linea << endl;
+    }
+victorInfancia.close();
+} else if (victorOption == 'b'){
+    while (getline(victorCreacionCreatura, linea)){
+        cout << linea << endl;
+    }
+victorCreacionCreatura.close();
+} else if (victorOption == 'c'){
+    while (getline(victorHowCarcel, linea)){
+    cout << linea << endl;
+}
+victorHowCarcel.close();
 
+}else{
+    cout << "Por favor, escoge la una de las respuestas proporcionadas";
+}
 
  cout << "Usuario: "<< endl;
  cout << "  Ya que tocamos el tema de los cargos... Creo que es hora que hablemos de ellos"<<endl;
@@ -196,11 +224,41 @@ cout << " a). ¿Como fue tu infancia?\n b). ¿Como hiciste a la craitura?\n c). 
  cout << "Victor: "<< endl;
  cout << "  Si... creo que tienes razon " /*nombre del usuario*/ << ". \n   Dime, de que cargos estoy siento inputado."<< endl;
  
- //Ingresar el texto morado en la sesscion Historia de Notion
- //Guardarlo en un .txt file
+while (getline(HistoriaCase1, linea)){
+    cout << linea << endl;
+}
 
- cout << "\nVictor: ";
- cout << "  Cual Evidencia quieres escuchar?  \n";
+HistoriaCase1.close();
+
+cout << "\nVictor: ";
+do{
+cout << "Cual Evidencia quieres escuchar?  \n";
+cin >> optionEvidencia;
+
+switch (optionEvidencia){
+case 1:
+    cout << "Nombre de Evidencia: " << e1.nombreEvidencia << endl;
+     while (getline(case1Evidence1txt, linea)){ 
+        cout << linea << endl;
+    }
+    case1Evidence1txt.close();
+    cout << "Estas seguro de utilizar esta evidencia s/n \n";
+    cin >> confirm;
+    break;
+
+case 2:
+    cout << "Nombre de Evidencia: " << e2.nombreEvidencia << endl;
+    cout << "Estas seguro de utilizar esta evidencia s/n \n";
+    cin >> confirm;
+    break;
+}
+}
+    while (confirm != 's' && confirm != 'S');
+
+    return 0;
+
+
+}
 
  //Aqui hacer un loop de evidencia que se pueden crear en un vector y que
  //a medida el juagador vaya seleccionando las evidencia del caso1 estas 
@@ -208,35 +266,19 @@ cout << " a). ¿Como fue tu infancia?\n b). ¿Como hiciste a la craitura?\n c). 
  //guardar la seleccion de evidencia tal vez en otro vector, en el que se pueda acceder a cualquier rato 
 
  //hacer cada uno de estos para cada caso. Los casos estan en Notion
- while (getline(case1Evidence1txt, linea)){ 
-        cout << linea << endl;
-    }
+
+    
 
 
 
 
-
-
-
-
+    
 
 
 
 
 
 /*
-    cout <<"-------------------------------------------------\n";
-    Evidencia C1E1 ("\nTestimoino de la creatura", "esta evidenia es en la que hablamos con la creatura", 1, 4, "Porque crees que los humanos podriamos hacer esto?", "Es que alcazo tenemos que jugar a ser Dios ", "porque entonces se volvio violenta? ", "Porque no deberiamos meterlo a la carcel? ", "Pregunta5" );
-    cout <<  C1E1.nombre<< endl; 
-    cout <<  C1E1.contenidoEvidencia <<endl; 
-    cout << "-------------------------------------------\n";
-    Evidencia C1E2 ( "Testimonio de Victor", "Apelaria al pueblo, pero que tanta credibilida tiene su palabra? ", 1, 2, "Pregunta 1 ", "Pregunta 2","Pregunta 3", "Pregunta 4", "Pregunta 5"  );
-    cout << "prueba " << C1E2.nombre <<endl;
-    cout << C1E2.contenidoEvidencia <<endl;
-
+ while (getline(case1Evidence1txt, linea)){ 
+        cout << linea << endl;
 */
-
-   
-    return 0;
-
-}
