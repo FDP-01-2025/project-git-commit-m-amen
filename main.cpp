@@ -25,15 +25,14 @@ ifstream victorCreacionCreatura ("textFiles/victorCreacionCreatura.txt");
 ifstream victorHowCarcel ("textFiles/victorHowCarcel.txt");
 ifstream HistoriaCase1 ("textFiles/HistoriaCase1.txt");
 
-
-cout << "Ingresa tu nombre";
-//hacer un cin en donde se guarde el nombre del usuario en la variable nombreJugador del Struct: Jugador
+cout << "vivan las pupusas";
+cout << "Ingresa tu nombre"; //hacer un cin en donde se guarde el nombre del usuario en la variable nombreJugador del Struct: Jugador
 
   txtDialogFall.showLongDialog(); /*Insertar nombre de usuario de la clase jugador*/ 
   cout << whyArriveLate.character << whyArriveLate.characterDialog;
 
 
-    while (true){
+    while (true){ //esto necesitamos hacerlo en un nuevo archivo, para solo llamarlo que corra en el main. 
     cout << "\n\n a.)  Mi alarma no sono \n b.) Dile la verdad \n c.) Mi perro se murio \n ";
     cin >> llegarTarde;
     llegarTarde = tolower(llegarTarde); //hace que cualquier input sea minuscula
@@ -55,7 +54,8 @@ cout << "Ingresa tu nombre";
          cin >> pickUpEvidence;
         if (pickUpEvidence == 'x'){
             //make something to store Victor files into "maletin"
-            victorInformation.showLongDialog();
+            
+            
             break; 
         }
         else{

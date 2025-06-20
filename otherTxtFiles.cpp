@@ -19,7 +19,7 @@ void gameFilesPrint::showLongDialog() {
     while(getline(fileReader, linea)){
         cout << linea <<endl;
     }
-    fileReader.close();
+    fileReader.close(); //not close it because it might be useful to keep in on a array
 
 }
 gameFilesPrint txtDialogFall = {"textFiles/dialogFall.txt"};
