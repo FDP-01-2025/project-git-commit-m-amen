@@ -15,67 +15,46 @@ char victorPresentation;
 char victorOption, confirm;
 int optionEvidencia;
 
-//llama a los archivos en carpeta textFiles para ser leeidos
-string linea; 
-ifstream afterVictorFile("textFiles/refleccionDespuesDeLeerCaso.txt"); //vincula pesamientos despues de leer expediente
-ifstream buscandoVictor("textFiles/buscandoVictor.txt");
-ifstream victorArrepentido("textFiles/VictorArrepentido.txt");
-ifstream victorInfancia ("textFiles/victorInfancia.txt");
-ifstream victorCreacionCreatura ("textFiles/victorCreacionCreatura.txt");
-ifstream victorHowCarcel ("textFiles/victorHowCarcel.txt");
-ifstream HistoriaCase1 ("textFiles/HistoriaCase1.txt");
 
-cout << "vivan las pupusas";
 cout << "Ingresa tu nombre"; //hacer un cin en donde se guarde el nombre del usuario en la variable nombreJugador del Struct: Jugador
+txtDialogFall.showLongDialog(); /*Insertar nombre de usuario de la clase jugador*/ 
+cout << whyArriveLate.character << whyArriveLate.characterDialog;
 
-  txtDialogFall.showLongDialog(); /*Insertar nombre de usuario de la clase jugador*/ 
-  cout << whyArriveLate.character << whyArriveLate.characterDialog;
-
-
-    while (true){ //esto necesitamos hacerlo en un nuevo archivo, para solo llamarlo que corra en el main. 
+while (true){ //esto necesitamos hacerlo en un nuevo archivo, para solo llamarlo que corra en el main. 
     cout << "\n\n a.)  Mi alarma no sono \n b.) Dile la verdad \n c.) Mi perro se murio \n ";
     cin >> llegarTarde;
     llegarTarde = tolower(llegarTarde); //hace que cualquier input sea minuscula
 
-    if (llegarTarde =='a' || llegarTarde == 'c'){
-        cout << llegarTardeA.character << llegarTardeA.characterDialog;
-        break; 
-
-    } else if (llegarTarde == 'b'){
-        cout << llegarTardeB.character << llegarTardeB.characterDialog;
-        break;}
-         
-        else{cout << "Por favor, escoje una de las opcciones previamente mencionadas\n\n"; } }
-
-
-    evelynTakeArchive.showLongDialog(); //keeps the diaglog ongoign
-
+        if (llegarTarde =='a' || llegarTarde == 'c'){
+            cout << llegarTardeA.character << llegarTardeA.characterDialog;
+            break; 
+        } 
+        else if (llegarTarde == 'b'){
+            cout << llegarTardeB.character << llegarTardeB.characterDialog;
+            break;
+        }
+        else{
+            cout << "Por favor, escoje una de las opcciones previamente mencionadas\n\n"; 
+        }
+}
+evelynTakeArchive.showLongDialog(); //keeps the diaglog ongoign
     while (true){
-         cin >> pickUpEvidence;
+    cin >> pickUpEvidence;
         if (pickUpEvidence == 'x'){
             //make something to store Victor files into "maletin"
-            
-            
-            break; 
+            victorInformation.showLongDialog();// shows Victor Charges file 
+            break;
         }
         else{
             cout << "Por favor, presione ''x'' para seguir ";
         }
     }
 
-    while (getline(afterVictorFile, linea)){ 
-        cout << linea << endl;
-    }
+refleccionAfterReadingFile.showLongDialog();
+youHave2hrs.showShortDialog(); //more dialog of Evelyn
+looking4Victor.showLongDialog();
 
-    youHave2hrs.showShortDialog(); //more dialog of Evelyn
-
-
-    while (getline(buscandoVictor, linea)){ 
-        cout << linea << endl;
-    }
-
-
-victorInformation.showLongDialog();// How would you present yourself to victor
+cout << "Como te le presentarias a Victor? \n a). Buena Manera \n b). Ir al grano ";
 cin >> victorPresentation; 
 victorPresentation = tolower(victorPresentation);
 
@@ -86,9 +65,8 @@ victorPresentation = tolower(victorPresentation);
     } else{
         cout << "Por favor, escoge la una de las respuestas proporcionadas";
       }
-    while (getline(victorArrepentido, linea)){ 
-        cout << linea << endl;
-    }
+
+victorRegretful.showLongDialog();
 
 
 cout << "Que te gustaria preguntarle a Victor Primero?\n";
@@ -97,21 +75,11 @@ cin >> victorOption;
 victorOption = tolower(victorOption);
 
 if (victorOption == 'a'){
-    while (getline(victorInfancia, linea)){
-        cout << linea << endl;
-    }
-victorInfancia.close();
+    victorChildhodd.showLongDialog();
 } else if (victorOption == 'b'){
-    while (getline(victorCreacionCreatura, linea)){
-        cout << linea << endl;
-    }
-victorCreacionCreatura.close();
+    victorMakingofCreature.showLongDialog();
 } else if (victorOption == 'c'){
-    while (getline(victorHowCarcel, linea)){
-    cout << linea << endl;
-}
-victorHowCarcel.close();
-
+    victorHowCarcel.showLongDialog();
 }else{
     cout << "Por favor, escoge la una de las respuestas proporcionadas";
 }
@@ -122,12 +90,7 @@ victorHowCarcel.close();
  cout << "Victor: "<< endl;
  cout << "  Si... creo que tienes razon " /*nombre del usuario*/ << ". \n   Dime, de que cargos estoy siento inputado."<< endl;
  
-while (getline(HistoriaCase1, linea)){
-    cout << linea << endl;
-}
-
-HistoriaCase1.close();
-
+HistoriaCase1.showLongDialog(); 
 cout << "\nVictor: ";
 do{ // me agrada mucho la idea, pero me gustaria que en vez de preguntarle de un solo si quiere usar la evidencia, que le deje revisar toda la evidencia y despues que escoga volverla a ver o escogerla
 cout << "Cual Evidencia quieres escuchar?  \n";
@@ -198,15 +161,3 @@ case 6:
     
 
 
-
-
-    
-
-
-
-
-
-/*
- while (getline(case1Evidence1txt, linea)){ 
-        cout << linea << endl;
-*/

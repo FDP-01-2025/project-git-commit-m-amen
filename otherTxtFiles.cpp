@@ -28,6 +28,14 @@ gameFilesPrint victorInformation = {"textFiles/victorCharacteristics.txt"};
 gameFilesPrint howPresentToVictor = {"textFiles/howPresentToVictor.txt"};
 gameFilesPrint victorPresentationA = {"textFiles/VictorPresentationA.txt"};
 gameFilesPrint victorPresentationB = {"textFiles/VictorPresentationB.txt"};
+gameFilesPrint refleccionAfterReadingFile = {"textFiles/refleccionDespuesDeLeerCaso.txt"};
+gameFilesPrint victorRegretful = {"textFiles/VictorArrepentido.txt"};
+gameFilesPrint looking4Victor = {"textFiles/buscandoVictor.txt"};
+gameFilesPrint victorChildhodd = {"textFiles/victorInfancia.txt"};
+gameFilesPrint victorMakingofCreature = {"textFiles/victorCreacionCreatura.txt"};
+gameFilesPrint victorHowCarcel = {"textFiles/victorHowCarcel.txt"};
+gameFilesPrint HistoriaCase1 = {"textFiles/HistoriaCase1.txt"};
+
 
 
 

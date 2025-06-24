@@ -17,10 +17,10 @@ struct on a separece document.
 using namespace std;
 
 struct gameFilesPrint{
-    string txtDialogSaved; // this will be useful for quite log dialog
+    string txtDialogSaved; // this will be useful for long  dialog
     void showLongDialog();
 };
-extern gameFilesPrint txtDialogFall, evelynTakeArchive, victorInformation, howPresentToVictor, victorPresentationA, victorPresentationB; //Aqui van los que se llaman afuera 
+extern gameFilesPrint txtDialogFall, evelynTakeArchive, victorInformation, howPresentToVictor, victorPresentationA, victorPresentationB, refleccionAfterReadingFile, victorRegretful, looking4Victor, victorChildhodd, victorMakingofCreature, victorHowCarcel, HistoriaCase1; //Aqui van los que se llaman afuera 
 
 
 
