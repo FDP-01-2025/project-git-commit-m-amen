@@ -28,7 +28,7 @@ Evidencia C1E2 = {"Nombre de la evidencia: Testimonio de la creatura", 4, 1, 8, 
 Evidencia C1E3 = {"Nombre de la evidencia: Propio Testimonio de la Victima", 1, 4, 2, "textFiles/case1Evidence3.txt"};
 Evidencia C1E4 = {"Nombre de la evidencia: Diario de Victor", 3, 2, 6, "textFiles/case1Evidence4.txt"};
 Evidencia C1E5 = {"Nombre de la evidencia: Testimonio de Padre Vander", 1, 4, 2, "textFiles/case1Evidence5.txt"};
-Evidencia C1E6 = {" Nombre de la evidencia: Argumento bien comun", 2, 3, 4, "textFiles/case1Evidence6.txt"};
+Evidencia C1E6 = {" Nombre de la evidencia: Argumento bien comun", 3, 3, 4, "textFiles/case1Evidence6.txt"};
 
 Evidencia C2E1 = {"Nombre de la evidencia: Testimonio Padre SJ", 4,1,8};
 Evidencia C2E2 = {"Nombre de la evidencia: Texto de Gottfried Wilhelm", 3,2,6};

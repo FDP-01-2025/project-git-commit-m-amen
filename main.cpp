@@ -141,7 +141,6 @@ case 6:
 }
 
 
-
 }
     while (confirm != 's' && confirm != 'S'); // Para reemplazar el &&, se puede usar el 'to.LowerCase' method para que lo haga minuscula sin
                                               // importar el output
@@ -150,6 +149,7 @@ case 6:
 
 
 }
+
 
  //Aqui hacer un loop de evidencia que se pueden crear en un vector y que
  //a medida el juagador vaya seleccionando las evidencia del caso1 estas 
