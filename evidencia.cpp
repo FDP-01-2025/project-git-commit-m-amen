@@ -24,7 +24,7 @@ void Evidencia::imprimir() {
 
 
 Evidencia C1E1 = {"Nombre de la evidencia: No status de la creatura", 3,2,6, "textFiles/case1Evidence1.txt", "PreguntaFiscal1", "PreguntaFiscal2","PreguntaFiscal3","PreguntaFiscal4","PreguntaFiscal5",};
-Evidencia C1E2 = {"Nombre de la evidencia: Testimonio de la creatura", 4, 1, 8, "textFiles/case1Evidence2.txt"} ;
+Evidencia C1E2 = {"Nombre de la evidencia: Testimonio de la creatura", 4, 1, 8, "textFiles/case1Evidence2.txt", "prosecutorQuestions/case1/c1e2q1.txt", "prosecutorQuestions/case1/c1e2q2.txt ","prosecutorQuestions/case1/c1e2q3.txt"} ;
 Evidencia C1E3 = {"Nombre de la evidencia: Propio Testimonio de la Victima", 1, 4, 2, "textFiles/case1Evidence3.txt"};
 Evidencia C1E4 = {"Nombre de la evidencia: Diario de Victor", 3, 2, 6, "textFiles/case1Evidence4.txt"};
 Evidencia C1E5 = {"Nombre de la evidencia: Testimonio de Padre Vander", 1, 4, 2, "textFiles/case1Evidence5.txt"};

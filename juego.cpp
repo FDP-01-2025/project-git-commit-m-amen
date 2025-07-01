@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "juego.h"
-#include "evidencia.h"
+#include "headerFiles/juego.h"
+#include "headerFiles/evidencia.h"
 
 using namespace std; 
 
