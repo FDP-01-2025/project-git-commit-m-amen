@@ -4,10 +4,16 @@
 #include <cctype> // to lowercase some input from the user to minimize erros
 #include "headerFiles/evidencia.h" // imports the header for evidence
 #include "headerFiles/otherTxtFiles.h"
+#include "headerFiles/nombre.h" // imports the header for player 
+#include "headerFiles/portafolio.h" // imports the header for portfolio
 using namespace std;
 
 int main()
 {
+    Jugador miJugador;
+cin.ignore(); // importante si hiciste cin >> antes
+pedirNombre(miJugador);
+cout << "Hola, " << miJugador.nombreJugador<<"!"<<endl;
 //variables usadas
 char llegarTarde; 
 char pickUpEvidence; 
