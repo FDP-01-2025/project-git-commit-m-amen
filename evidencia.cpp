@@ -36,3 +36,55 @@ Evidencia C2E3 = {"Nombre de la evidencia: Testimonio de Cientifico", 4,1,8, "te
 Evidencia C2E4 = {"Nombre de la evidencia: Leyes inmorales pasadas", 3, 2, 6, "textFiles/case2Evidence4.txt"};
 Evidencia C2E5 = {"Nombre de la evidencia: Personas Previamente Acusadas por la Iglesia", 3, 2, 6, "textFiles/case2Evidence5.txt" };
 Evidencia C2E6 = {"Nombre de la evidencia: Investigar Fiscal", 6, -1, 12, "textFiles/case2Evidence6.txt","prosecutorQuestions/case2/e6q1.txt" ,"prosecutorQuestions/case2/e6q2a.txt" ,"prosecutorQuestions/case2/e6q2b.txt", "prosecutorQuestions/case2/e6q3a.txt", "prosecutorQuestions/case2/e6q3b.txt", "prosecutorQuestions/case2/e6q4.txt" ,"prosecutorQuestions/case2/e6q5.txt" ,"prosecutorQuestions/case2/e6q6.txt" };
+
+void menuEvidence(){
+    int optionEvidencia;
+    char confirm;
+
+    cout << "\nVictor: ";
+    do{
+    cout << "Cual Evidencia quieres escuchar? 1-6  \n";
+    cin >> optionEvidencia;
+
+    switch (optionEvidencia){
+case 1:
+    cout << C1E1.nombreEvidencia << endl;
+    C1E1.imprimir();
+    break;
+
+case 2:
+    cout << C1E2.nombreEvidencia << endl;
+    C1E2.imprimir();
+    break;
+
+case 3: 
+    cout << C1E3.nombreEvidencia << endl; 
+    C1E3.imprimir();    
+    break;
+
+case 4: 
+    cout << C1E4.nombreEvidencia << endl;
+    C1E4.imprimir();
+    break;
+
+case 5:
+    cout << C1E5.nombreEvidencia << endl;
+    C1E5.imprimir();
+    break;
+
+case 6:
+    cout << C1E6.nombreEvidencia << endl;
+    C1E6.imprimir();
+    break;
+    
+    default:
+    cout << "Opción invalida. Elige una opción entre 1-6. \n";
+    }
+
+    cout << "Presiona X para volver a las evidencias o cualquier otra tecla para salir de las evidencias: \n";
+    cin >> confirm;
+    confirm = tolower (confirm);
+}   
+    while (confirm == 'x');
+
+}

@@ -7,24 +7,21 @@
 #include "headerFiles/nombre.h" // imports the header for player 
 #include "headerFiles/portafolio.h" // imports the header for portfolio
 #include "headerFiles/juego.h" //imports the header for all the played before the user gets asked what evidence they want
+#include "headerFiles/evidenceSelector.h"
+#include "headerFiles/estadoJuicio.h"
+
 using namespace std;
 
 int main()
 {
+
 preEvidenceShownGame();
 
-
+EstadoJuicio estado;
+selectEvidence(estado);
 
 
 }
-
-
- //Aqui hacer un loop de evidencia que se pueden crear en un vector y que
- //a medida el juagador vaya seleccionando las evidencia del caso1 estas 
- //vayan desaparaciendo del menu.
- //guardar la seleccion de evidencia tal vez en otro vector, en el que se pueda acceder a cualquier rato 
-
- //hacer cada uno de estos para cada caso. Los casos estan en Notion
 
     
 

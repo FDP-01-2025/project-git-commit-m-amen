@@ -8,9 +8,47 @@
 #include "headerFiles/otherTxtFiles.h"
 #include "headerFiles/nombre.h" // imports the header for player 
 #include "headerFiles/portafolio.h" // imports the header for portfolio
+
 using namespace std; 
+void askVictorsLife (){  // for this function we will stored the loop on how Victor ended up in Jail
+    char Opiton; 
+    bool askedA = false, askedB = false, askedC = false;
 
+    while (!(askedA && askedB && askedC))
+    {
+       cout << "Que te gustaria saber de Victor?\n";
+       if (!askedA) cout << "\na).Cuentame un poco de tu infancia\n";
+       if (!askedB) cout << "b).Cuentame Victor, Como hiciste la creatura\n";
+       if (!askedC) cout << "c). Como terminaste en la carcel?\n ";
+       cin >> Opiton;
+       Opiton = tolower(Opiton);
 
+       if (Opiton == 'a'){
+        if(!askedA){
+        victorChildhodd.showLongDialog();
+        askedA = true;
+        }else {cout << "Victor: "<< endl;
+         cout << "   Ya preguntaste eso amigo.... Pregunta otra cosa" << endl;}
+       } 
+       else if (Opiton == 'b')
+       {
+        if (!askedB)
+        {
+            victorMakingofCreature.showLongDialog();
+            askedB = true; 
+        }else {cout << "Victor: "<< endl;
+         cout << "   Ya preguntaste eso amigo.... Pregunta otra cosa" << endl;}
+       }   
+       else if (Opiton == 'c'){
+        if (!askedC){
+            victorHowCarcel.showLongDialog();
+            askedC= true;
+        }else {cout << "\nVictor: "<< endl;
+         cout << "   Ya preguntaste eso amigo.... Pregunta otra cosa\n" << endl;}
+       }
+       else {cout << "\n Opción inválida. Escoge una de las literales";} 
+    }
+ }
 
 
 void preEvidenceShownGame(){ // in this funtion is stored all the dialog prior up to saving the evidence
@@ -68,37 +106,14 @@ youHave2hrs.showShortDialog(); //more dialog of Evelyn
 looking4Victor.showLongDialog(); // this dialog shows the user looking for our client Victor
 
 
-//Steven curretly working on it
-cout << "Como te le presentarias a Victor? \n a). Buena Manera \n b). Ir al grano ";
-cin >> victorPresentation; 
-victorPresentation = tolower(victorPresentation);
-    //On this loop, the user decides on how they will present themselves to victor, ether compasionate or agresive
-    if (victorPresentation == 'a'){  
-       victorPresentationA.showLongDialog();
-    }else if (victorPresentation == 'b'){
-     victorPresentationB.showLongDialog();
-    } else{
-        cout << "Por favor, escoge la una de las respuestas proporcionadas";
-      }
 
 victorRegretful.showLongDialog(); //this dialog shows how Regretful is Victor for the accused crimes he has commited
 
 
 //Steven currelty working on it
-cout << "Que te gustaria preguntarle a Victor Primero?\n";
-cout << " a). ¿Como fue tu infancia?\n b). ¿Como hiciste a la craitura?\n c). ¿Como terminaste en la carcel en si?"<< endl;
-cin >> victorOption;
-victorOption = tolower(victorOption);
+askVictorsLife();   //Here the funtion of how Victor ended up in Jail will go
 
-if (victorOption == 'a'){
-    victorChildhodd.showLongDialog();
-} else if (victorOption == 'b'){
-    victorMakingofCreature.showLongDialog();
-} else if (victorOption == 'c'){
-    victorHowCarcel.showLongDialog();
-}else{
-    cout << "Por favor, escoge la una de las respuestas proporcionadas";
-}
+
 
  cout << "Usuario: "<< endl;
  cout << "  Ya que tocamos el tema de los cargos... Creo que es hora que hablemos de ellos"<<endl;
@@ -108,94 +123,10 @@ if (victorOption == 'a'){
  
 HistoriaCase1.showLongDialog(); 
 cout << "\nVictor: ";
-do{ // me agrada mucho la idea, pero me gustaria que en vez de preguntarle de un solo si quiere usar la evidencia, que le deje revisar toda la evidencia y despues que escoga volverla a ver o escogerla
-cout << "Cual Evidencia quieres escuchar?  \n";
-cin >> optionEvidencia;
 
-
-//Esperando el commit de carlos
-switch (optionEvidencia){
-case 1:
-    cout << C1E1.nombreEvidencia << endl;
-    C1E1.imprimir();
-    
-    cout << "Estas seguro de utilizar esta evidencia s/n \n";
-    cin >> confirm;
-    break;
-
-case 2:
-    cout << C1E2.nombreEvidencia << endl;
-    C1E2.imprimir();
-    cout << "Estas seguro de utilizar esta evidencia s/n \n";
-    cin >> confirm;
-    break;
-
-case 3: 
-    cout << C1E3.nombreEvidencia << endl; 
-     C1E3.imprimir();
-    cout << "Estas seguro de utilizar esta evidencia s/n \n";
-    cin >> confirm;     
-    break;
-
-case 4: 
-     C1E4.imprimir();
-    cout << "Estas seguro de utilizar esta evidencia s/n \n";
-    cin >> confirm;     
-    break;
-
-case 5:
-     C1E5.imprimir();
-    cout << "Estas seguro de utilizar esta evidencia s/n \n";
-    cin >> confirm;
-    break;
-
-case 6:
-     C1E6.imprimir();
-    cout << "Estas seguro de utilizar esta evidencia s/n \n";
-    cin >> confirm;
-    break;
-
-    
-}
-
-
-}
-    while (confirm != 's' && confirm != 'S'); // Para reemplazar el &&, se puede usar el 'to.LowerCase' method para que lo haga minuscula sin
-                                              // importar el output
+menuEvidence(); //with this funtion, the user sees all the evidence and its dialog given by Victor
 
 }
 
 
-
-
-/*
-void envidenciaChoose(){
-    const int totalTimeCase1 =  14; //This is the time that the user has to choose the evidence
-    int availableTimeCase1 = totalTimeCase1;
-    vector<Evidencia> chosenEvidence;
-    vector <Evidencia> case1Evidencie = {C1E1,C1E2, C1E3, C1E4, C1E5,  C1E6};
-
-    //shown all evidence
-
-    cout << "Selecciona 4 evidencias para "; 
-}*/
- void askVictorsLife (){  // for this function we will stored the loop on how Victor ended up in Jail
-    char Opiton; 
-    bool askedA = false, askedB = false, askedC = false;
-
-    while (!(askedA && askedB && askedC))
-    {
-       cout << "Que te gustaria saber de Victor primero?\n";
-       if (!askedA) cout << "\na).Cuentame un poco de tu infancia\n";
-       if (!askedB) cout << "b).Cuentame Victor, Como hiciste la creatura\n";
-       if (!askedC) cout << "c). Como terminaste en la carcel?\n ";
-       cin >> Opiton;
-       Opiton = tolower(Opiton);
-
-    }
-    
-
-
-
-
- }
+ 

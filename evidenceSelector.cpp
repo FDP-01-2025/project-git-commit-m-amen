@@ -1,10 +1,11 @@
-#include "headerFiles/evidenceSelect.h"
+#include "headerFiles/evidenceSelector.h"
 #include "headerFiles/evidencia.h"
 #include "headerFiles/Jugador.h"
+#include "headerFiles/estadoJuicio.h"
 
 using namespace std;
 
-void selectEvidence(vector<Evidencia>& seleccionadas, int& totalPoints) {
+void selectEvidence(EstadoJuicio& estado) {
     int optionEvidencia2;
     char confirm2;
     bool opcionesUsadas[7] = {false};
@@ -16,7 +17,7 @@ void selectEvidence(vector<Evidencia>& seleccionadas, int& totalPoints) {
         cout << "Selecciona una opción (1-6) o 0 para salir: \n";
         cout << "1. Nombre de la evidencia: No status de la creatura. 6 puntos \n2. Nombre de la evidencia: Testimonio de la creatura. 8 puntos \n3. Nombre de la evidencia: Propio Testimonio de la Victima. 2 puntos \n";
         cout << "4. Nombre de la evidencia: Diario de Victor. 6 puntos \n5. Nombre de la evidencia: Testimonio de Padre Vander. 2 puntos \n6. Nombre de la evidencia: Argumento bien comun. 4 puntos \n";
-        cout << "Total puntos acumulados: " << totalPoints << endl;
+        cout << "Total puntos acumulados: " << estado.totalPoints << endl;
 
         cin >> optionEvidencia2;
 
@@ -39,28 +40,28 @@ void selectEvidence(vector<Evidencia>& seleccionadas, int& totalPoints) {
         
         switch (optionEvidencia2) {
             case 1:
-                seleccionadas.push_back(C1E1);
-                totalPoints += C1E1.puntosPosibles = 6;
+                estado.seleccionadas.push_back(C1E1);
+                estado.totalPoints += C1E1.puntosPosibles = 6;
                 break;
             case 2:
-                seleccionadas.push_back(C1E2);
-                totalPoints += C1E2.puntosPosibles = 8;
+                estado.seleccionadas.push_back(C1E2);
+                estado.totalPoints += C1E2.puntosPosibles = 8;
                 break;
             case 3:
-                seleccionadas.push_back(C1E3);
-                totalPoints += C1E3.puntosPosibles = 2;
+                estado.seleccionadas.push_back(C1E3);
+                estado.totalPoints += C1E3.puntosPosibles = 2;
                 break;
             case 4:
-                seleccionadas.push_back(C1E4);
-                totalPoints += C1E4.puntosPosibles = 6;
+                estado.seleccionadas.push_back(C1E4);
+                estado.totalPoints += C1E4.puntosPosibles = 6;
                 break;
             case 5:
-                seleccionadas.push_back(C1E5);
-                totalPoints += C1E5.puntosPosibles = 2;
+                estado.seleccionadas.push_back(C1E5);
+                estado.totalPoints += C1E5.puntosPosibles = 2;
                 break;
             case 6:
-                seleccionadas.push_back(C1E6);
-                totalPoints += C1E6.puntosPosibles = 4;
+                estado.seleccionadas.push_back(C1E6);
+                estado.totalPoints += C1E6.puntosPosibles = 4;
                 break;
             default:
                 cout << "Opción invalida. Elige una opción entre 1-6.\n";
@@ -68,10 +69,10 @@ void selectEvidence(vector<Evidencia>& seleccionadas, int& totalPoints) {
 
         opcionesUsadas[optionEvidencia2] = true; // opcion como usada
 
-        if (totalPoints > 23) {
+        if (estado.totalPoints > 23) {
             cout << "Sobrepasaste el límite de 23 puntos.\n";
-            seleccionadas.clear();
-            totalPoints = 0;
+            estado.seleccionadas.clear();
+            estado.totalPoints = 0;
         
         
         for (int i = 1; i <= 6; ++i) {      // se reinician las opciones
@@ -81,5 +82,5 @@ void selectEvidence(vector<Evidencia>& seleccionadas, int& totalPoints) {
 
     } while (true);
 
-    cout << "Selección finalizada. Total de puntos: " << totalPoints << endl;
+    cout << "Selección finalizada. Total de puntos: " << estado.totalPoints << endl;
 }
