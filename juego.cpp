@@ -8,8 +8,7 @@
 #include "headerFiles/otherTxtFiles.h"
 #include "headerFiles/nombre.h" // imports the header for player 
 #include "headerFiles/portafolio.h" // imports the header for portfolio
-using namespace std; 
-
+using namespace std;
 
 
 
@@ -21,47 +20,57 @@ void preEvidenceShownGame(){ // in this funtion is stored all the dialog prior u
     char victorOption, confirm;
     int optionEvidencia;
 
+}
 
-    // Byron hacer void de pedir nombre 
+//Byron hacer void de pedir nombre
+void pedirNombreEjemplo() {
     Jugador miJugador;
-    pedirNombre(miJugador);
-    cout << "Hola, " << miJugador.nombreJugador<<"!"<<endl;
-    cout << "Ingresa tu nombre"; //hacer un cin en donde se guarde el nombre del usuario en la variable nombreJugador del Struct: Jugador
-    txtDialogFall.showLongDialog(); /*Insertar nombre de usuario de la clase jugador*/ 
-    cout << whyArriveLate.character << whyArriveLate.characterDialog;
 
-    // Byron hacer su propio void 
-    while (true){ //esto necesitamos hacerlo en un nuevo archivo, para solo llamarlo que corra en juego.cpp . 
+    cout << "Ingresa tu nombre: ";
+    getline(cin, miJugador.nombreJugador);
+
+    cout << "Hola, " << miJugador.nombreJugador << "!" << endl;
+
+    txtDialogFall.showLongDialogObj("Insertar nombre de usuario de la clase jugador");
+    cout << whyArriveLate.characterDialog;
+}
+
+// Byron hacer su propio void 
+ void excusaLlegarTarde(char &llegarTarde, Dialogo llegarTardeA, Dialogo llegarTardeB) {
+    while (true) {
         cout << "\n\n a.)  Mi alarma no sono \n b.) Dile la verdad \n c.) Mi perro se murio \n ";
         cin >> llegarTarde;
-        llegarTarde = tolower(llegarTarde); //makes any input lowercase
-            if (llegarTarde =='a' || llegarTarde == 'c'){
-                cout << llegarTardeA.character << llegarTardeA.characterDialog;
-                break; 
-            } 
-            else if (llegarTarde == 'b'){
+        llegarTarde = tolower(llegarTarde); // Convierte a minúscula
+
+        if (llegarTarde == 'a' || llegarTarde == 'c') {
+            cout << llegarTardeA.character << llegarTardeA.characterDialog;
+            break;
+        } else if (llegarTarde == 'b') {
             cout << llegarTardeB.character << llegarTardeB.characterDialog;
             break;
-            }
-            else{
-            cout << "Por favor, escoje una de las opcciones previamente mencionadas\n\n"; 
-            }
+        } else {
+            cout << "Por favor, escoge una de las opciones previamente mencionadas\n\n";
+        }
     }
+}
+
+    
 
 evelynTakeArchive.showLongDialog(); //keeps the diaglog ongoign
 
 //Byron hacer void 
-    while (true){
-    cin >> pickUpEvidence;
-        if (pickUpEvidence == 'x'){
-            //make something to store Victor files onto "portafolio"
-            victorInformation.showLongDialog();// shows Victor Charges file 
+void recogerEvidencia(char &pickUpEvidence, Personaje victorInformation) {
+    while (true) {
+        cin >> pickUpEvidence;
+        if (pickUpEvidence == 'x' || pickUpEvidence == 'X') {
+            victorInformation.showLongDialog(); // muestra los cargos o información
             break;
-        }
-        else{
-            cout << "Por favor, presione ''x'' para seguir ";
+        } else {
+            cout << "Por favor, presione 'x' para seguir.\n";
         }
     }
+}
+
 
 refleccionAfterReadingFile.showLongDialog(); //Shows the user reflecting about just reading the files
 youHave2hrs.showShortDialog(); //more dialog of Evelyn
