@@ -3,6 +3,7 @@
         "cctype": "cpp",
         "fstream": "cpp",
         "iostream": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "vector": "cpp"
     }
 }

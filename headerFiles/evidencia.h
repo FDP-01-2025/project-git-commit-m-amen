@@ -15,7 +15,7 @@ string nombreEvidencia;
     void imprimir(); 
 };
 
-
+void menuEvidence ();
 
 extern Evidencia C1E1, C1E2, C1E3, C1E4, C1E5, C1E6; 
 
