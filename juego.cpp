@@ -8,8 +8,11 @@
 #include "headerFiles/otherTxtFiles.h"
 #include "headerFiles/nombre.h" // imports the header for player 
 #include "headerFiles/portafolio.h" // imports the header for portfolio
+using namespace std;
 
-using namespace std; 
+
+
+
 void askVictorsLife (){  // for this function we will stored the loop on how Victor ended up in Jail
     char Opiton; 
     bool askedA = false, askedB = false, askedC = false;
@@ -50,7 +53,7 @@ void askVictorsLife (){  // for this function we will stored the loop on how Vic
     }
  }
 
-
+ 
 void preEvidenceShownGame(){ // in this funtion is stored all the dialog prior up to saving the evidence
     //used variables 
     char llegarTarde; 
@@ -59,74 +62,56 @@ void preEvidenceShownGame(){ // in this funtion is stored all the dialog prior u
     char victorOption, confirm;
     int optionEvidencia;
 
+}
 
-    // Byron hacer void de pedir nombre 
+void pedirNombreEjemplo() {
     Jugador miJugador;
-    pedirNombre(miJugador);
-    cout << "Hola, " << miJugador.nombreJugador<<"!"<<endl;
-    cout << "Ingresa tu nombre"; //hacer un cin en donde se guarde el nombre del usuario en la variable nombreJugador del Struct: Jugador
-    txtDialogFall.showLongDialog(); /*Insertar nombre de usuario de la clase jugador*/ 
-    cout << whyArriveLate.character << whyArriveLate.characterDialog;
 
-    // Byron hacer su propio void 
-    while (true){ //esto necesitamos hacerlo en un nuevo archivo, para solo llamarlo que corra en juego.cpp . 
+    cout << "Ingresa tu nombre: ";
+    getline(cin, miJugador.nombreJugador);
+
+    cout << "Hola, " << miJugador.nombreJugador << "!" << endl;
+
+    txtDialogFall.showLongDialog();
+    cout << whyArriveLate.characterDialog;
+}
+
+ void excuseBeingLate() {
+    while (true) {
+        char llegarTarde;
         cout << "\n\n a.)  Mi alarma no sono \n b.) Dile la verdad \n c.) Mi perro se murio \n ";
         cin >> llegarTarde;
-        llegarTarde = tolower(llegarTarde); //makes any input lowercase
-            if (llegarTarde =='a' || llegarTarde == 'c'){
-                cout << llegarTardeA.character << llegarTardeA.characterDialog;
-                break; 
-            } 
-            else if (llegarTarde == 'b'){
+        llegarTarde = tolower(llegarTarde); // Convierte a minúscula
+
+        if (llegarTarde == 'a' || llegarTarde == 'c') {
+            cout << llegarTardeA.character << llegarTardeA.characterDialog;
+            break;
+        } else if (llegarTarde == 'b') {
             cout << llegarTardeB.character << llegarTardeB.characterDialog;
             break;
-            }
-            else{
-            cout << "Por favor, escoje una de las opcciones previamente mencionadas\n\n"; 
-            }
-    }
-
-evelynTakeArchive.showLongDialog(); //keeps the diaglog ongoign
-
-//Byron hacer void 
-    while (true){
-    cin >> pickUpEvidence;
-        if (pickUpEvidence == 'x'){
-            //make something to store Victor files onto "portafolio"
-            victorInformation.showLongDialog();// shows Victor Charges file 
-            break;
-        }
-        else{
-            cout << "Por favor, presione ''x'' para seguir ";
+        } else {
+            cout << "Por favor, escoge una de las opciones previamente mencionadas\n\n";
         }
     }
-
-refleccionAfterReadingFile.showLongDialog(); //Shows the user reflecting about just reading the files
-youHave2hrs.showShortDialog(); //more dialog of Evelyn
-looking4Victor.showLongDialog(); // this dialog shows the user looking for our client Victor
-
-
-
-victorRegretful.showLongDialog(); //this dialog shows how Regretful is Victor for the accused crimes he has commited
-
-
-//Steven currelty working on it
-askVictorsLife();   //Here the funtion of how Victor ended up in Jail will go
-
-
-
- cout << "Usuario: "<< endl;
- cout << "  Ya que tocamos el tema de los cargos... Creo que es hora que hablemos de ellos"<<endl;
-
- cout << "Victor: "<< endl;
- cout << "  Si... creo que tienes razon " /*nombre del usuario*/ << ". \n   Dime, de que cargos estoy siento inputado."<< endl;
- 
-HistoriaCase1.showLongDialog(); 
-cout << "\nVictor: ";
-
-menuEvidence(); //with this funtion, the user sees all the evidence and its dialog given by Victor
-
 }
+
+void pickUpEvidence() {
+    char pickUpEvidence;
+    while (true) {
+        cin >> pickUpEvidence;
+        if (pickUpEvidence == 'x' || pickUpEvidence == 'X') {
+            victorInformation.showLongDialog(); // muestra los cargos o información
+            break;
+        } else {
+            cout << "Por favor, presione 'x' para seguir.\n";
+        }
+    }
+}
+
+  
+
+
+
 
 
  
