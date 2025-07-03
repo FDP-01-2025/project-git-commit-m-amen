@@ -12,7 +12,6 @@ using namespace std;
 
 
 
-
 void askVictorsLife (){  // for this function we will stored the loop on how Victor ended up in Jail
     char Opiton; 
     bool askedA = false, askedB = false, askedC = false;

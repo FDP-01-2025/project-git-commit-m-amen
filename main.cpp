@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream> //this library helps import  .txt files
 #include <cctype> // to lowercase some input from the user to minimize erros
@@ -35,8 +34,3 @@ int main()
 
 
 }
-
-
-    
-
-
