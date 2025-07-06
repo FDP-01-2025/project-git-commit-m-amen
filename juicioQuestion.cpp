@@ -304,20 +304,229 @@ void pointsVeri(){
     cout << "FIN \n";
 }
 
+void makeQuestionC2Q1_2() {
+    ifstream archivo("prosecutorQuestions/case2/e1q1.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+    cout << linea << endl;
+    }
+    archivo.close();
 
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
 
+    if (userAnswer == 'a' || userAnswer == 'b') {
+    ifstream archivoA("prosecutorQuestions/case2/e1q2a.txt");
+    string lineaA;
+    while (getline(archivoA, lineaA)) {
+        cout << lineaA << endl;
+    }
+    archivoA.close();
 
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
 
+    if (userAnswer == 'a' || userAnswer == 'b' || userAnswer == 'c' || userAnswer == 'd') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }
+    
 
+    //////////////////////////////////////////////////////////////////////////////////////////// archivos BBBBBBB
 
+    } else if (userAnswer == 'c' || userAnswer == 'd') {
+    ifstream archivoB("prosecutorQuestions/case2/e1q2b.txt");
+    string lineaB;
+    while (getline(archivoB, lineaB)) {
+        cout << lineaB << endl;
+    }
+    archivoB.close();
 
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
 
+    if (userAnswer == 'a' || userAnswer == 'b') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }
+    } else {
+    cout << "Respuesta no válida." << endl;
+    }
+}
 
+void makeQuestionC2Q3() {
+    ifstream archivo("prosecutorQuestions/case2/e1q3.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+    }
+    archivo.close();
 
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
 
+    if (userAnswer == 'b'|| userAnswer == 'a') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }
+}
 
+void makeQuestionC2Q4() {
+    ifstream archivo("prosecutorQuestions/case2/e1q4.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+    }
+    archivo.close();
 
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
 
+    if (userAnswer == 'b'|| userAnswer == 'a' || userAnswer == 'c' || userAnswer == 'd') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }
+}
 
+void makeQuestionC2Q1_E6() {
+    ifstream archivo("prosecutorQuestions/case2/e6q1.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+    cout << linea << endl;
+    }
+    archivo.close();
 
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
 
+    if (userAnswer == 'a' || userAnswer == 'b') {
+    ifstream archivoA("prosecutorQuestions/case2/e6q2a.txt");
+    string lineaA;
+    while (getline(archivoA, lineaA)) {
+        cout << lineaA << endl;
+    }
+    archivoA.close();
+
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'a' || userAnswer == 'c') {
+    ifstream archivoA("prosecutorQuestions/case2/e6q3a.txt");
+    string lineaA;
+    while (getline(archivoA, lineaA)) {
+        cout << lineaA << endl;
+    }
+    archivoA.close();
+    
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'a' || userAnswer == 'b' || userAnswer == 'd') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+        }
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////// archivos BBBBBBB
+
+    } else if (userAnswer == 'c' || userAnswer == 'd') {
+    ifstream archivoB("prosecutorQuestions/case2/e6q2b.txt");
+    string lineaB;
+    while (getline(archivoB, lineaB)) {
+        cout << lineaB << endl;
+    }
+    archivoB.close();
+
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'a' || userAnswer == 'b' || userAnswer == 'c' || userAnswer == 'd') {
+    ifstream archivoA("prosecutorQuestions/case2/e6q3b.txt");
+    string lineaA;
+    while (getline(archivoA, lineaA)) {
+        cout << lineaA << endl;
+    }
+    archivoA.close();
+    
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'c' || userAnswer == 'b') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+        }
+    }
+    }
+}
+
+void makeQuestionC2Q2_E6() {
+    ifstream archivo("prosecutorQuestions/case2/e6q4.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+    }
+    archivo.close();
+
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'b'|| userAnswer == 'd') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }
+}
+
+void makeQuestionC2Q3_E6() {
+    ifstream archivo("prosecutorQuestions/case2/e6q5.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+    }
+    archivo.close();
+
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'a'|| userAnswer == 'd') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }
+}
+
+void makeQuestionC2Q4_E6() {
+    ifstream archivo("prosecutorQuestions/case2/e6q6.txt");
+    string linea;
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+    }
+    archivo.close();
+
+    cout << "Tu respuesta: ";
+    cin >> userAnswer;
+    userAnswer = tolower(userAnswer);
+
+    if (userAnswer == 'c') {
+        cout << "Respuesta correcta." << endl;
+    } else {
+        cout << "Respuesta incorrecta." << endl;
+    }    
+}

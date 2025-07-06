@@ -15,6 +15,7 @@ using namespace std;
 
 int main()
 {
+    
     pedirNombreEjemplo();// this funtion asks the user for its name 
     excuseBeingLate(); // promps cuestions why the user was late 
     evelynTakeArchive.showLongDialog(); // shows Victor's Files
@@ -28,34 +29,40 @@ int main()
     EstadoJuicio estado;
     selectEvidence(estado);
 
+    // PREGUNTAS CASO 1
 
-    //preguntas case 1
 
-    makeQuestionE1();
+    makeQuestionE1(); // EVIDENCIA 1 3 PREGUNTAS
 
-    cout << "/////////////////////////////////////////////////////////////////////////////////////" << endl;
+    makeQuestionE2(); // EVIDENCIA 2 4 PREGUNTAS
 
-    makeQuestionE2();
+    makeQuestionE3(); // EVIDENCIA 3 1 PREGUNTA
 
-    cout << "/////////////////////////////////////////////////////////////////////////////////////" << endl;
+    makeQuestionE4(); // EVIDENCIA 4 3 PREGUNTAS
 
-    makeQuestionE3();
+    makeQuestionE5(); // EVIDENCIA 5 1 PREGUNTA
 
-    cout << "/////////////////////////////////////////////////////////////////////////////////////" << endl;
+    makeQuestionE6(); // EVIDENCIA 6 2
 
-    makeQuestionE4();
+    pointsVeri(); // verificar puntos caso 1
 
-    cout << "/////////////////////////////////////////////////////////////////////////////////////" << endl;
+    // PREGUNTAS CASO 2
+    
+    makeQuestionC2Q1_2(); // EVIDENCIA 4 SEGUN DOC 3 PREGUNTAS A 3 PREGUNTAS B
 
-    makeQuestionE5();
+    makeQuestionC2Q3(); // EVIDENCIA 4 PREGUNTA #3 SEGUN DOC
 
-    cout << "/////////////////////////////////////////////////////////////////////////////////////" << endl;
+    makeQuestionC2Q4(); // EVIDENCIA 4 PREGUNTA #4 SEGUN DOC
 
-    makeQuestionE6();
+    makeQuestionC2Q1_E6(); // EVIDENCIA 5 SEGUN DOC 3 PREGUNTAS A 3 PREGUNTAS B
 
-    cout << "/////////////////////////////////////////////////////////////////////////////////////" << endl;
+    makeQuestionC2Q2_E6(); // EVIDENCIA 5 PREGUNTA #4 SEGUN DOC
 
-    pointsVeri(); // verificar puntos
+    makeQuestionC2Q3_E6(); // EVIDENCIA 5 PREGUNTA #5 SEGUN DOC
 
+    makeQuestionC2Q4_E6(); // EVIDENCIA 5 PREGUNTA #6 SEGUN DOC
 
 }
+
+
+
