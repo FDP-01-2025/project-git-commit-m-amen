@@ -69,8 +69,8 @@ void selectEvidence(EstadoJuicio& estado) {
 
         opcionesUsadas[optionEvidencia2] = true; // opcion como usada
 
-        if (estado.totalPoints > 23) {
-            cout << "Sobrepasaste el límite de 23 puntos.\n";
+        if (estado.totalPoints > 16) {
+            cout << "Sobrepasaste el límite de 16 puntos.\n";
             estado.seleccionadas.clear();
             estado.totalPoints = 0;
         

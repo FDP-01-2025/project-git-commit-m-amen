@@ -9,13 +9,22 @@
 #include "headerFiles/evidenceSelector.h"
 #include "headerFiles/estadoJuicio.h"
 #include "headerFiles/minigames.h"
-#include "headerFiles/juicioQuestion.h"
 
 using namespace std;
 
 int main()
 {
+
+   //playCase1Evidence2();
+   playCase2Evidence2();
+   
+   
+
+
     
+
+
+    /*
     pedirNombreEjemplo();// this funtion asks the user for its name 
     excuseBeingLate(); // promps cuestions why the user was late 
     evelynTakeArchive.showLongDialog(); // shows Victor's Files
@@ -28,41 +37,11 @@ int main()
     menuEvidence(); //with this funtion, the user sees all the evidence and its dialog given by Victor
     EstadoJuicio estado;
     selectEvidence(estado);
+*/
 
-    // PREGUNTAS CASO 1
+return 0; 
 
-
-    makeQuestionE1(); // EVIDENCIA 1 3 PREGUNTAS
-
-    makeQuestionE2(); // EVIDENCIA 2 4 PREGUNTAS
-
-    makeQuestionE3(); // EVIDENCIA 3 1 PREGUNTA
-
-    makeQuestionE4(); // EVIDENCIA 4 3 PREGUNTAS
-
-    makeQuestionE5(); // EVIDENCIA 5 1 PREGUNTA
-
-    makeQuestionE6(); // EVIDENCIA 6 2
-
-    pointsVeri(); // verificar puntos caso 1
-
-    // PREGUNTAS CASO 2
-    
-    makeQuestionC2Q1_2(); // EVIDENCIA 4 SEGUN DOC 3 PREGUNTAS A 3 PREGUNTAS B
-
-    makeQuestionC2Q3(); // EVIDENCIA 4 PREGUNTA #3 SEGUN DOC
-
-    makeQuestionC2Q4(); // EVIDENCIA 4 PREGUNTA #4 SEGUN DOC
-
-    makeQuestionC2Q1_E6(); // EVIDENCIA 5 SEGUN DOC 3 PREGUNTAS A 3 PREGUNTAS B
-
-    makeQuestionC2Q2_E6(); // EVIDENCIA 5 PREGUNTA #4 SEGUN DOC
-
-    makeQuestionC2Q3_E6(); // EVIDENCIA 5 PREGUNTA #5 SEGUN DOC
-
-    makeQuestionC2Q4_E6(); // EVIDENCIA 5 PREGUNTA #6 SEGUN DOC
-
-}
 
 
 
+}
