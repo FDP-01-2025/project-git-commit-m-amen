@@ -21,13 +21,13 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
    **Carnet:** 00171125
 
 3. **Nombre completo:** Byron Fabrizio Garcia Aldana
-   **Carnet:** [Carnet del estudiante 3]
+   **Carnet:** 00143825
 
-
+Documentacoin 
 flujogramas: https://drive.google.com/drive/folders/1JvF3zbh9kenAB5HQboFv3uikhQpauNFl?usp=drive_link
 
 
 ## Instrucciones de Ejecución
 
 1. Clona este repositorio en tu máquina local:
-   git clone [URL del repositorio]
+   git clone(https://github.com/FDP-01-2025/project-git-commit-m-amen/tree/desarollo/
