@@ -651,5 +651,39 @@ void playCase1Evidence4(){
     endDay.showLongDialog();
 }
 
+// CASE 1 Razón creación de la criatura nuevo
+
+bool chosingOptionGame(){
+    string question = "¿Que quieres hacer? ";
+    vector<string> options = {
+        "Seguir el caso ",
+	    "Abandonar el caso" ,
+    };
+
+    int userChoice =  promptOnce(question, options);
+
+    if (userChoice!=1)
+    {
+        return false; 
+    }
+    else{return true;}
+}
+
+void playCase1Evidence6(){
+    firstDialogC1E6.showLongDialog();
+
+    bool rightAnswer = chosingOptionGame();
+    
+    if (!rightAnswer) {
+        cout << "Has decidido abandonar este caso. \n";
+        return;
+    }
+
+    endDialog.showLongDialog();
+}
+
+
+//void selectSuitCase();
+
 
 
