@@ -687,3 +687,80 @@ void playCase1Evidence6(){
 
 
 
+//////////////////// TRABAJOOOOOOOOOO NUEVO
+
+bool minigameChooseHideTesis(){ // funtion to hide the tesis 
+        string question = "Dónde decides guardarla ?";
+    vector<string> options = {
+        "En medio de una biblia católica", 
+        "En medio de unos panes duros del día anterior", 
+        "Debajo del compartimiento del asiento del carruaje", 
+        "En la bolsa de tu saco de vestir"
+    };
+       
+    int userChoice =  promptOnce(question, options);
+    if (userChoice !=2)
+    {
+        return true;
+    }
+    else {return false;}   
+}
+
+void playCase2Evidence3(){ // evidencia 2 segun doc Wilhelm 6 días:
+    cout << "        ***Empieza el día I ***\n\n";
+    C2Intro.showLongDialog();
+
+    biblioConver.showLongDialog(); // CONVERSACION LIBRARIO INICIO
+
+    cout << "        ***Empieza el día II*** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día II*** \n\n";
+    cout << "        ***Empieza el día III** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día III*** \n\n";
+
+    cout << "        ***Empieza el día IV *** \n\n";
+    
+    ConversationBiblio2.showLongDialog(); // CONVERSACION LIBRARIO NUEVA BIBLIOTECA
+
+    cout << "        ***Empieza el día V *** \n\n";
+    cout << "Empiezas desde temprano y viajas mucho. Se hace noche y te quedas en un hotel a pasar la noche \n\n";
+    cout << "        ***Fin del día V    *** \n\n";
+
+    cout << "        ***Empieza día VI   *** \n\n";
+
+    StartDay6.showLongDialog();
+
+    // minijuego de opciones una muere
+    
+    bool optionCorrect = minigameChooseHideTesis();
+
+    if (!optionCorrect)
+    {
+        cout << "Te descubrieron la evidencia ";
+        cout << "   Fuiste ejecutado por la poseción de ese documento"; return;
+    }
+
+    postOption.showLongDialog(); // CONVERSACION DESPUES DE ELEGIR OPCION CORRECTA
+}
+
+// EVIDENCIA 3 EMPIEZA incompleto
+
+// funtion press X to continue
+void pickUpNewspaper() {
+    char pickUpEvidence;
+    while (true) {
+        cin >> pickUpEvidence;
+        if (pickUpEvidence == 'x' || pickUpEvidence == 'X') {
+            Newspaper.showLongDialog(); // muestra los cargos o información
+            break;
+        } else {
+            cout << "Por favor, presione 'x' para seguir.\n";
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
