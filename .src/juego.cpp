@@ -108,7 +108,7 @@ void pickUpEvidence() {
 }
 
   
-
+extern bool evidenciasRecolectadas[3][10]; // Suponiendo 3 casos y hasta 10 evidencias por caso
 
 
 

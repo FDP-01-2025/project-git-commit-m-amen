@@ -1,0 +1,33 @@
+Vas a la casa de tu amigo Pierre y tocas su puerta. Al abrir
+la puerta el te dice: 
+
+Pierre: 
+    Amigo mio! Como has estado? 
+    
+Le respondes: 
+    Bien! Aqu molestandote para un favor
+
+Con una sonrisa te dice:    
+    Claro amigo! Que es lo que necesitas? 
+
+Timidamente, le respondes: 
+    He escuchado que tienes una copia del nuevo Codigo Penal 
+    en tus manos y queria pedirte de favor si me lo podrias 
+    prestar unos cuantos dias. Ya que tengo un cliente que 
+    se puede beneficiar si llegase a encontar alguna nueva 
+    ley de interes 
+
+Mientras la sonrisa de Pierre desaparece, te responde: 
+    Oh amigo mio, tu sabes como funciona esto. Cuando salen los 
+    nuevos Codigos Penales todos tenemos que estudiarlos, no puedo 
+    prestartelo asi por asi, sino. Que pasara con mis clientes? 
+    No te lo tomes a mal, pero no puedo prestartelo querdo amigo, 
+    si hay algo mas con lo que te pueda ayudar por favor, dimelo 
+    y vere como te ayuda 
+
+Ya que era por lo unico que veniste a verlo, le respondes cordialmente: 
+    No querido amigo, era todo por lo que venia. Muchas gracias por
+    responder el llamado en tu puerta. Tengo que irme, me urge encontrar
+    una copia de ese Codigo. Muchas gracias amigo. Hasta Pronto
+
+Te retiras lentamente de su casa y analizas tus posibles opciones restantes

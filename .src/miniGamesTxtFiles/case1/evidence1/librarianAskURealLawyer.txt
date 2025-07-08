@@ -1,0 +1,8 @@
+
+Le preguntas al bibliotecario: 
+    ¿Buen día, de casualidad usted tiene el Código Penal de Ginebra? 
+Librero: 
+	si, aqui tiene
+
+Le dices: 
+	Gracias! 

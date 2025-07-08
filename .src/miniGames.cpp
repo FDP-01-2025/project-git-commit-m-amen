@@ -8,6 +8,16 @@
 #include <algorithm>
 using namespace std;
 
+//LongDialogs Case 1, Evidence 1: 
+gameFilesPrint C1E1Thought = {"miniGamesTxtFiles/case1/evidence1/C1E1Thought.txt"};
+gameFilesPrint JeansDialog = {"miniGamesTxtFiles/case1/evidence1/JeansDialog.txt"};
+gameFilesPrint PierreDialog = {"miniGamesTxtFiles/case1/evidence1/PierreDialog.txt"};
+gameFilesPrint AugusteDialog = {"miniGamesTxtFiles/case1/evidence1/AugusteDialog.txt"};
+gameFilesPrint afterAskingFriends = {"miniGamesTxtFiles/case1/evidence1/afterAskingFriends.txt"};
+gameFilesPrint zørkDialog = {"miniGamesTxtFiles/case1/evidence1/zørkDialog.txt"};
+gameFilesPrint librarianAskURealLawyer = {"miniGamesTxtFiles/case1/evidence1/librarianAskURealLawyer.txt"};
+gameFilesPrint textAfterGettingPenalBook = {"miniGamesTxtFiles/case1/evidence1/textAfterGettingPenalBook.txt"};
+
 //Long Dialogs  for Case1 Evidence2
 gameFilesPrint C1E2IntroThought = {"miniGamesTxtFiles/case1/evidence2/introThought.txt"};
 gameFilesPrint fishermannMiniGameDialog = {"miniGamesTxtFiles/case1/evidence2/pescadoresForMinijuego.txt"};
@@ -68,6 +78,12 @@ gameFilesPrint firstDialog = {"miniGamesTxtFiles/case2/evidence3/dialog.txt"};
 gameFilesPrint xDays = {"miniGamesTxtFiles/case2/evidence3/dialog.txt"};
 gameFilesPrint dialogDr = {"miniGamesTxtFiles/case2/evidence3/dialog2.txt"};
 
+//Dialog for Case II: Evidencia V: 
+gameFilesPrint introC2E5 = {"miniGamesTxtFiles/case2/evidence5/introC2E5.txt"};
+gameFilesPrint afterYouAccpet = {"miniGamesTxtFiles/case2/evidence5/afterYouAccpet.txt"};
+gameFilesPrint begginingDay2C2E5 = {"miniGamesTxtFiles/case2/evidence5/introC2E5.txt"};
+gameFilesPrint clearingCustomsC2E5 = {"miniGamesTxtFiles/case2/evidence5/clearingCustomsC2E5.txt"};
+gameFilesPrint afterEnteringCabaretRoom = {"miniGamesTxtFiles/case2/evidence5/enteringTheCabaretRoom.txt"};
 
 
 //They are for passportFunction
@@ -379,58 +395,7 @@ bool whatDidThatCreature(){ //now dies
 } 
 
 
-//In here, all the declared files so the user can just play them on the main.cpp
-void playCase1Evidence2(){
-    C1E2IntroThought.showLongDialog();
-    playFishermanMiniGrame();
-    pescadorDialog.showLongDialog();
-    bool passportOnYou = minigamePassportFromGenivaToFrance();
-    eleccionCarruaje.showLongDialog();
 
-    bool rightHorse = chosingHorseCar();
-    if(!rightHorse){ cout << "Viajaste en el carruaje inadecuado, Te das cuenta muy tarde y no puedes hacer nada mas que ";
-                                 cout << "por no haber puesto atencion, ahora ya no puedes hacer esta evidencia"; return;}
-                                 
-    CustomsFrancePreQuestions.showLongDialog();
-
-    bool didntLieToCustoms = customsWhereYouGoing();
-    if (!didntLieToCustoms)
-    {
-    cout << "Oficial de Aduana: \n";
-    cout << "   Acabo de hablar con su chofer. EL me dice que van a para un lugar totalmente diferente.\n   Su entrada ha sido negada\n";return;
-    }
-   
-    bool whereYouGoing = customsWhyAreYouGoing();
-    if (!whereYouGoing)
-    {
-        customsYouAintGoingCuzOfThat.showShortDialog();
-        return;
-    }
-    
-    if (!passportOnYou)
-    {
-        cout << "Oficial aduanero: ";
-        cout << "   Usted no tiene su pasaporte. Lo lamento pero no puede pasar"; return;
-    }
-    
-    afterClearingCustoms.showLongDialog();
-    cin >> turnOnLintern; 
-    ifYellAtCreatureFile.showLongDialog();
-    ifYellAtCreature(); // if you yell at the creature, you die lol 
-    askCreaturaToHelpVictor.showShortDialog();
-    creatureteTellsYouGoAway.showShortDialog();
-    whyYouWentToSeeCreature.showShortDialog();
-     whyShouldCreatureHelpVictor();
-    silenceAfteraskingCreaturehelp.showLongDialog();
-    bool keepGoingAfterCreature = whatDidThatCreature();
-    if (!keepGoingAfterCreature) 
-    {
-        cout << "La Creatura se aleja y ya no hay nada mas que puedas hacer en este caso";
-        return;
-    }
-    creaturesCreation.showLongDialog();
-    
-}
 
 //______________________________________________________________________________
 
@@ -509,27 +474,6 @@ void lookforFatherKenovitzOnItaly (){
 }
 
 
-void playCase2Evidence2(){
-//C2E2IntroThought.showLongDialog();
-//lookForPriestKenovitz();
-
-bool passportBrought = minigamePassportFromGenivaToItaly();
-
-//begginingDay2.showLongDialog();
-cout << "        ***Empieza el día III ***\n\n";
-
-if (!passportBrought) //checks if the user brought the passport
-{
-    cout << "Oficial Aduanero: ";
-    cout << "   No tienes tu pasaporte, no puedes entrar a Italia"; return;
-}else{cout << "Oficial de Aduana: "; cout << "  Muy bien. Bienvenido a Italia!";}
-begginingDay3.showLongDialog();
-lookforFatherKenovitzOnItaly();
-begginingDay4.showLongDialog();
-
-
-}
-
 
 
 // CASE1  Evidencia driario de victor nuevo
@@ -606,6 +550,442 @@ bool chosingBook(){
     else{return true;}
 }
 
+
+
+// C1E6 Razón creación de la criatura nuevo
+
+bool chosingOptionGame(){
+    string question = "¿Que quieres hacer? ";
+    vector<string> options = {
+        "Seguir el caso ",
+	    "Abandonar el caso" ,
+    };
+
+    int userChoice =  promptOnce(question, options);
+
+    if (userChoice!=1)
+    {
+        return false; 
+    }
+    else{return true;}
+}
+
+
+
+//void selectSuitCase();
+
+
+
+//////////////////// TRABAJOOOOOOOOOO NUEVO
+
+bool minigameChooseHideTesis(){ // funtion to hide the tesis 
+        string question = "Dónde decides guardarla ?";
+    vector<string> options = {
+        "En medio de una biblia católica", 
+        "En medio de unos panes duros del día anterior", 
+        "Debajo del compartimiento del asiento del carruaje", 
+        "En la bolsa de tu saco de vestir"
+    };
+       
+    int userChoice =  promptOnce(question, options);
+    if (userChoice !=2)
+    {
+        return true;
+    }
+    else {return false;}   
+}
+
+
+// EVIDENCIA 3 EMPIEZA incompleto
+
+// funtion press X to continue
+void pickUpNewspaper() {
+    char pickUpEvidence;
+    while (true) {
+        cin >> pickUpEvidence;
+        if (pickUpEvidence == 'x' || pickUpEvidence == 'X') {
+            Newspaper.showLongDialog(); // muestra los cargos o información
+            break;
+        } else {
+            cout << "Por favor, presione 'x' para seguir.\n";
+        }
+    }
+}
+
+
+
+
+bool minigameChooseToSannedrines(){ // this funtion is to pick the passport for France
+        string question = "Que cosas deseas empacar para llevar al viaje?: ";
+    vector<string> options = {
+        "Chamarra", 
+        "Maquina de escribir", 
+        "Pasaporte",
+        "Libro para leer"
+    };
+       
+    int userChoice =  promptOnce(question, options);
+    if (userChoice == 3)
+    {
+        return true;
+    }
+    else {return false;}
+}
+
+
+
+//C1E1: Estatus de la craetura: 
+void whichFriendCouldLendYouBook (){
+    string question = "¿A quién decides pedirle prestado el Codigo Penal?";
+    vector<string> places = {"Jean", "Pierre", "Auguste"};
+    vector<bool> alreadyFound(places.size(), false);
+    bool found = false;
+
+    while(!found && count(alreadyFound.begin(), alreadyFound.end(),true)< (int)places.size()){
+        int election = minigameChoiceWithResult("¿A quién decides pedirle prestado el Codigo Penal?", places, alreadyFound);
+
+        switch (election)
+        {
+        case 0: // this is Jeans Dialog
+            JeansDialog.showLongDialog();
+            break;
+
+        case 1: // this is Pierre Dialog
+            PierreDialog.showLongDialog();
+            //found = true;
+            break;
+        
+        case 2: // this is for Auguste
+
+            AugusteDialog.showLongDialog();
+        }
+    }
+
+}
+bool askZørkForPenalCode(){ 
+    string question = "¿Qué dices? ¿Le preguntas donde puedes conseguir una copia?";
+    vector<string> options = {
+       "Pierde la pena y preguntale ",
+       "Nah, estoy seguro que si sigo buscando puedo encontarlo",
+    
+    };
+  
+    int userChoice =  promptOnce(question, options);
+    if (userChoice == 1)
+    {
+       return true; 
+    }
+    else{
+        return false;
+      
+    }
+} 
+void whichStoreIsTheRightOne (){ // checks if the user went into the right store
+    string question = "¿Cual Tienda crees que es la correcta? ?";
+    vector<string> places = {"Tienda 1 ", "Tienda 2", "Tienda 3", "Tienda 4"};
+    vector<bool> alreadyFound(places.size(), false);
+    bool found = false;
+
+    while(!found && count(alreadyFound.begin(), alreadyFound.end(),true)< (int)places.size()){
+        int election = minigameChoiceWithResult("¿A quién decides pedir direcciones?", places, alreadyFound);
+
+        switch (election)
+        {
+        case 0: // This is for store1
+            cout << "Esta es una tienda comida Polaca";
+            cout << "Regresas al punto de inicio\n";
+            break;
+
+        case 1: // This is for Store2
+           cout << "Esta es una taberna, aunque se te antoja el tomar, tienes que conseguir ese libro";
+            cout << "Regresas al punto de inicio\n";
+            break;
+        
+        case 2: // This is for store3
+            cout << "Esta si es una libreria!\n";
+             found = true;
+             break;
+        
+        case 3: //this is for store4
+            cout << "Esta tienda esta cerrada\n";
+            break; 
+        }
+    }
+
+}
+bool miniGameLibrian(){ // this is a simple question game 
+    int a1 = 2, a2 = 3;
+    int answer1, answer2;
+    int points = 0; 
+
+    cout << "¿Que se necesita para que un juicio sea justo?\n   1. Que es fiscal sea simpatico\n   2. Que hayan pruebas, defensa y un juez imparical ";
+    cin >> answer1;
+    if (answer1 == a1){ points++;}
+
+    cout << "¿Cual de estos es un derecho del acusado?\n    1.Que su caso dure eternamente\n    2.Tener acceso a defensa legal";
+    cin >> answer2; 
+    if(answer2 == a2){points++;}
+
+    if (points == 2){cout << "Librero:\n   Perdon por haber dudado de ti. Si eres un abogado";return true;}
+    else{cout << "Tu no eres un abogado, como no puedes responder esas simples preguntas.\nLargate de mi tienda"; return false;}
+}
+
+
+
+//Caso II: Evidencia V: Investigar al fiscal
+bool aceptarPropuestaExtraño(){ 
+    string question = "¿Aceptas la propuesta de este extraño?";
+    vector<string> options = {
+       "Si, la aceptas",
+       "No, puede ser peligroso",
+    
+    };
+  
+    int userChoice =  promptOnce(question, options);
+    if (userChoice == 1)
+    {
+       return true; 
+    }
+    else{
+        return false;
+      
+    }
+} 
+bool passportFromGenivaToParis(){ // this funtion is to pick the passport for France
+        string question = "Para este viaje necesitas escoger el objeto que es primordial para tu viaje.Escoge el objecto que quieres llevar a Paris,Francia: ";
+    vector<string> options = {
+        "Perfume", 
+        "Linterna", 
+        "Pasaporte", 
+    };
+       
+    int userChoice =  promptOnce(question, options);
+    if (userChoice ==3)
+    {
+        return true;
+    }
+    else {return false;}
+    
+    
+}
+bool accpetMysteriosGirlPropose(){ 
+    string question = "¿Aceptas la propuesta de esta mujer?";
+    vector<string> options = {
+       "Si, la aceptas",
+       "No, puede ser peligroso",
+    
+    };
+  
+    int userChoice =  promptOnce(question, options);
+    if (userChoice == 1)
+    {
+       return true; 
+    }
+    else{
+        return false;
+      
+    }
+} 
+
+
+
+
+
+void playCase2Evidence2(){
+//C2E2IntroThought.showLongDialog();
+//lookForPriestKenovitz();
+
+bool passportBrought = minigamePassportFromGenivaToItaly();
+
+//begginingDay2.showLongDialog();
+cout << "        ***Empieza el día III ***\n\n";
+
+if (!passportBrought) //checks if the user brought the passport
+{
+    cout << "Oficial Aduanero: ";
+    cout << "   No tienes tu pasaporte, no puedes entrar a Italia"; return;
+}else{cout << "Oficial de Aduana: "; cout << "  Muy bien. Bienvenido a Italia!";}
+begginingDay3.showLongDialog();
+lookforFatherKenovitzOnItaly();
+begginingDay4.showLongDialog();
+
+
+}
+void playCase2Evidence3(){ // evidencia 2 segun doc Wilhelm 6 días:
+    cout << "        ***Empieza el día I ***\n\n";
+    C2Intro.showLongDialog();
+
+    biblioConver.showLongDialog(); // CONVERSACION LIBRARIO INICIO
+
+    cout << "        ***Empieza el día II*** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día II*** \n\n";
+    cout << "        ***Empieza el día III** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día III*** \n\n";
+
+    cout << "        ***Empieza el día IV *** \n\n";
+    
+    ConversationBiblio2.showLongDialog(); // CONVERSACION LIBRARIO NUEVA BIBLIOTECA
+
+    cout << "        ***Empieza el día V *** \n\n";
+    cout << "Empiezas desde temprano y viajas mucho. Se hace noche y te quedas en un hotel a pasar la noche \n\n";
+    cout << "        ***Fin del día V    *** \n\n";
+
+    cout << "        ***Empieza día VI   *** \n\n";
+
+    StartDay6.showLongDialog();
+
+    // minijuego de opciones una muere
+    
+    bool optionCorrect = minigameChooseHideTesis();
+
+    if (!optionCorrect)
+    {
+        cout << "Te descubrieron la evidencia ";
+        cout << "   Fuiste ejecutado por la poseción de ese documento"; return;
+    }
+
+    postOption.showLongDialog(); // CONVERSACION DESPUES DE ELEGIR OPCION CORRECTA
+
+    return;
+}
+void playCase2Evidence4(){ // evidencia 3 segun doc
+    C2E3intro.showLongDialog(); // INTRO A EVIDENCIA
+    
+    pickUpNewspaper(); // FUNCION DE X
+
+    historyTravel.showLongDialog(); // HISTORIA DE OPCIONES
+    
+    // INSERTAR MINIJUEGO DE OPCIONES DE ADUANAS
+
+    bool optionCorrect = minigameChooseToSannedrines();
+
+    if (!optionCorrect)
+    {
+        cout << "Opciones equivocadas ";
+        cout << "   No te sirivieron para nada"; return;
+    }
+
+    xDays.showLongDialog();
+
+    cout << "Pasado el tiempo logras llegar a donde tenias que ir \n\n";
+
+    dialogDr.showLongDialog();
+
+    // minijuego 2 opciones
+}
+void playCase2Evidence5(){
+    introC2E5.showLongDialog();
+    bool acceptStrangerProposal = aceptarPropuestaExtraño();
+
+    if (!acceptStrangerProposal)
+    {cout << "Al pasar de los dias, no pudiste encontrar nada malo sobre el fiscal, talvez es un santo despues de todo "; return;}
+    else{cout << "Decides arriesgarte, es que lo peor que puede pasar? ";}
+    afterYouAccpet.showLongDialog();
+    bool passportOnYou = passportFromGenivaToParis();
+
+    cout << "\n       *** Termina dia I ***\n \n      *** Inicia dia II ***\n";
+
+    begginingDay2C2E5.showLongDialog();
+
+
+    if (!passportOnYou)
+    {
+        cout << "Oficial aduanero: \n";
+        cout << "   Usted no tiene su pasaporte. Lo lamento pero no puede pasar"; return;
+    }else{cout << "Bienvenido a Francia. Puede pasar";}
+
+    clearingCustomsC2E5.showLongDialog();
+    bool willFollowHer = accpetMysteriosGirlPropose();
+
+    if (!willFollowHer)
+    {
+        cout << "Los minutos se convirtieron en horas. Nunca encontaste algo del fiscal.\nQuiza es un santo despues de todo \n";
+        cout << "Decepcionado, sales del cabaret. Dos hombres encapuchados te apuñalan. Lo ultimo que ven tus ojos es a una mujer besandose\ncon un hombre mientras su vista desaparece. Mueres solo en las Calles de Paris";
+        exit(EXIT_SUCCESS);
+    }else{cout << "Decides seguir a la misteriosa muchacha";}
+    
+    afterEnteringCabaretRoom.showLongDialog();
+    
+    
+    
+
+
+
+
+
+
+}
+//In here, all the declared files so the user can just play them on the main.cpp
+void playCase1Evidence1(){
+
+    C1E1Thought.showLongDialog();
+    whichFriendCouldLendYouBook();
+    afterAskingFriends.showLongDialog();
+    bool saidYesToZørk = askZørkForPenalCode();
+
+    if(!saidYesToZørk){
+        cout << "Sigues buscando todo el dia y no logras encontar a alguien que te quiera pestar o vender" << 
+        "el libro. En todas las tiendas parece estar agotado\nPasan los dias y no lo lograste encontrar.\nPierdes la evidencia ";
+        return;
+    }else {cout << "\nPierdes la pena y te le acercas a Zørk";}
+
+    zørkDialog.showLongDialog();
+
+    whichStoreIsTheRightOne();
+    librarianAskURealLawyer.showLongDialog();
+    
+    textAfterGettingPenalBook.showLongDialog();
+
+}
+void playCase1Evidence2(){
+    C1E2IntroThought.showLongDialog();
+    playFishermanMiniGrame();
+    pescadorDialog.showLongDialog();
+    bool passportOnYou = minigamePassportFromGenivaToFrance();
+    eleccionCarruaje.showLongDialog();
+
+    bool rightHorse = chosingHorseCar();
+    if(!rightHorse){ cout << "Viajaste en el carruaje inadecuado, Te das cuenta muy tarde y no puedes hacer nada mas que ";
+                                 cout << "por no haber puesto atencion, ahora ya no puedes hacer esta evidencia"; return;}
+                                 
+    CustomsFrancePreQuestions.showLongDialog();
+
+    bool didntLieToCustoms = customsWhereYouGoing();
+    if (!didntLieToCustoms)
+    {
+    cout << "Oficial de Aduana: \n";
+    cout << "   Acabo de hablar con su chofer. EL me dice que van a para un lugar totalmente diferente.\n   Su entrada ha sido negada\n";return;
+    }
+   
+    bool whereYouGoing = customsWhyAreYouGoing();
+    if (!whereYouGoing)
+    {
+        customsYouAintGoingCuzOfThat.showShortDialog();
+        return;
+    }
+    
+    if (!passportOnYou)
+    {
+        cout << "Oficial aduanero: ";
+        cout << "   Usted no tiene su pasaporte. Lo lamento pero no puede pasar"; return;
+    }
+    
+    afterClearingCustoms.showLongDialog();
+    cin >> turnOnLintern; 
+    ifYellAtCreatureFile.showLongDialog();
+    ifYellAtCreature(); // if you yell at the creature, you die lol 
+    askCreaturaToHelpVictor.showShortDialog();
+    creatureteTellsYouGoAway.showShortDialog();
+    whyYouWentToSeeCreature.showShortDialog();
+     whyShouldCreatureHelpVictor();
+    silenceAfteraskingCreaturehelp.showLongDialog();
+    bool keepGoingAfterCreature = whatDidThatCreature();
+    if (!keepGoingAfterCreature) 
+    {
+        cout << "La Creatura se aleja y ya no hay nada mas que puedas hacer en este caso";
+        return;
+    }
+    creaturesCreation.showLongDialog();
+    
+}
 void playCase1Evidence4(){
     cout << "        ***Empieza el día I ***\n\n";
     firstDialogC1.showLongDialog();
@@ -650,25 +1030,6 @@ void playCase1Evidence4(){
 
     endDay.showLongDialog();
 }
-
-// CASE 1 Razón creación de la criatura nuevo
-
-bool chosingOptionGame(){
-    string question = "¿Que quieres hacer? ";
-    vector<string> options = {
-        "Seguir el caso ",
-	    "Abandonar el caso" ,
-    };
-
-    int userChoice =  promptOnce(question, options);
-
-    if (userChoice!=1)
-    {
-        return false; 
-    }
-    else{return true;}
-}
-
 void playCase1Evidence6(){
     firstDialogC1E6.showLongDialog();
 
@@ -681,130 +1042,6 @@ void playCase1Evidence6(){
 
     endDialog.showLongDialog();
 }
-
-
-//void selectSuitCase();
-
-
-
-//////////////////// TRABAJOOOOOOOOOO NUEVO
-
-bool minigameChooseHideTesis(){ // funtion to hide the tesis 
-        string question = "Dónde decides guardarla ?";
-    vector<string> options = {
-        "En medio de una biblia católica", 
-        "En medio de unos panes duros del día anterior", 
-        "Debajo del compartimiento del asiento del carruaje", 
-        "En la bolsa de tu saco de vestir"
-    };
-       
-    int userChoice =  promptOnce(question, options);
-    if (userChoice !=2)
-    {
-        return true;
-    }
-    else {return false;}   
-}
-
-void playCase2Evidence3(){ // evidencia 2 segun doc Wilhelm 6 días:
-    cout << "        ***Empieza el día I ***\n\n";
-    C2Intro.showLongDialog();
-
-    biblioConver.showLongDialog(); // CONVERSACION LIBRARIO INICIO
-
-    cout << "        ***Empieza el día II*** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día II*** \n\n";
-    cout << "        ***Empieza el día III** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día III*** \n\n";
-
-    cout << "        ***Empieza el día IV *** \n\n";
-    
-    ConversationBiblio2.showLongDialog(); // CONVERSACION LIBRARIO NUEVA BIBLIOTECA
-
-    cout << "        ***Empieza el día V *** \n\n";
-    cout << "Empiezas desde temprano y viajas mucho. Se hace noche y te quedas en un hotel a pasar la noche \n\n";
-    cout << "        ***Fin del día V    *** \n\n";
-
-    cout << "        ***Empieza día VI   *** \n\n";
-
-    StartDay6.showLongDialog();
-
-    // minijuego de opciones una muere
-    
-    bool optionCorrect = minigameChooseHideTesis();
-
-    if (!optionCorrect)
-    {
-        cout << "Te descubrieron la evidencia ";
-        cout << "   Fuiste ejecutado por la poseción de ese documento"; return;
-    }
-
-    postOption.showLongDialog(); // CONVERSACION DESPUES DE ELEGIR OPCION CORRECTA
-}
-
-// EVIDENCIA 3 EMPIEZA incompleto
-
-// funtion press X to continue
-void pickUpNewspaper() {
-    char pickUpEvidence;
-    while (true) {
-        cin >> pickUpEvidence;
-        if (pickUpEvidence == 'x' || pickUpEvidence == 'X') {
-            Newspaper.showLongDialog(); // muestra los cargos o información
-            break;
-        } else {
-            cout << "Por favor, presione 'x' para seguir.\n";
-        }
-    }
-}
-
-
-
-
-bool minigameChooseToSannedrines(){ // this funtion is to pick the passport for France
-        string question = "Que cosas deseas empacar para llevar al viaje?: ";
-    vector<string> options = {
-        "Chamarra", 
-        "Maquina de escribir", 
-        "Pasaporte",
-        "Libro para leer"
-    };
-       
-    int userChoice =  promptOnce(question, options);
-    if (userChoice == 3)
-    {
-        return true;
-    }
-    else {return false;}
-}
-
-void playCase2Evidence4(){ // evidencia 3 segun doc
-    C2E3intro.showLongDialog(); // INTRO A EVIDENCIA
-    
-    pickUpNewspaper(); // FUNCION DE X
-
-    historyTravel.showLongDialog(); // HISTORIA DE OPCIONES
-    
-    // INSERTAR MINIJUEGO DE OPCIONES DE ADUANAS
-
-    bool optionCorrect = minigameChooseToSannedrines();
-
-    if (!optionCorrect)
-    {
-        cout << "Opciones equivocadas ";
-        cout << "   No te sirivieron para nada"; return;
-    }
-
-    xDays.showLongDialog();
-
-    cout << "Pasado el tiempo logras llegar a donde tenias que ir \n\n";
-
-    dialogDr.showLongDialog();
-
-    // minijuego 2 opciones
-}
-
-
-
-
 
 
 

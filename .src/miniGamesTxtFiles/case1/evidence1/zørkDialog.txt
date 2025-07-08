@@ -1,0 +1,26 @@
+Te le acercas y le preguntas:: 
+	Hola ¿Cómo te encuentras? 
+Zørk: 
+	¿Qué quieres? Se que no me estás hablando de buena forma
+Le respondes: 
+	Directo al grano ¿Eh? ¡Me encanta! Bueno, necesito preguntarte si 
+    sabes dónde puedo conseguir una copia del Código Penal. 
+    ¡No parece estar en ningún lado! 
+Zørk: 
+    Meh, solo dirígete a Lausana, ellos tienen algunas copias. 
+    Pero deberías apresurarte, ya que en cualquier momento allá también se acaban. 
+
+Agradecido le respondes: 
+	¡Perfecto! Te lo agradezco mucho 
+Zørk: 
+    No me lo agradezcas… tarde o temprano me cobrare este favor...
+
+Mientras Zørk dice esto, se aleja de ti. Pero te importa de menos, ya sabes donde puedes 
+conseguir una copia del Código Penal. 
+        
+        ***Termina el día III***
+
+        ***Empieza el día IV***
+
+Este día tomas un choche hacia la cuidad de Lausana el choche te deja enfrente de 5 tiendas. 
+Por alguna razón, no están rotuladas así que tienes que entrar a cada una hasta encontrar la indicada 

@@ -15,19 +15,10 @@ using namespace std;
 int main()
 {
 
-   //playCase1Evidence2();
-   //playCase2Evidence2();
 
-   //playCase2Evidence3();
-   
-   //playCase2Evidence4(); //incompleto
+  
 
-   //playCase1Evidence4();
-
-
-   //playCase1Evidence6();
-
-    /*
+    
     pedirNombreEjemplo();// this funtion asks the user for its name 
     excuseBeingLate(); // promps cuestions why the user was late 
     evelynTakeArchive.showLongDialog(); // shows Victor's Files
@@ -37,10 +28,17 @@ int main()
     looking4Victor.showLongDialog(); // this dialog shows the user looking for our client Victor
     askVictorsLife();   //Here the funtion of how Victor ended up in Jail will go
     victorRegretful.showLongDialog(); //this dialog shows how Regretful is Victor for the accused crimes he has commited
-    menuEvidence(); //with this funtion, the user sees all the evidence and its dialog given by Victor
-    EstadoJuicio estado;
+    playCase1Evidence1();
+    playCase1Evidence4();
+    playCase1Evidence2();
+    playCase1Evidence6();
+
+    playCase2Evidence2();
+    playCase2Evidence4();
+    playCase2Evidence5();
     
-*/
+    
+
 
 return 0; 
 

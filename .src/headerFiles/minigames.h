@@ -6,16 +6,10 @@ bool minigamePassportFromGenivaToFrance(); // this is to check the user brought 
 
 
 
-
-
-
-
-
 void playCase1Evidence1();
 void playCase1Evidence2(); // in this funtion will be stored everything it has to do with the minigames of playCase1Evidence2
 void playCase1Evidence3();
 void playCase1Evidence4();
-void playCase1Evidence5();
 void playCase1Evidence6(); 
 
 

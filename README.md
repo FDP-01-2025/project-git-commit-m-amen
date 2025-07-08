@@ -20,13 +20,14 @@ Este proyecto consiste en un juego de aventuras donde el jugador debe explorar u
 2. **Nombre completo:** Carlos Emmanuel Martinez Huezo
    **Carnet:** 00171125
 
-3. **Nombre completo:** [Nombre del estudiante 3]  
+3. **Nombre completo:** Byron Fabrizio Garcia Aldana
    **Carnet:** [Carnet del estudiante 3]
 
+
+flujogramas: https://drive.google.com/drive/folders/1JvF3zbh9kenAB5HQboFv3uikhQpauNFl?usp=drive_link
 
 
 ## Instrucciones de Ejecución
 
 1. Clona este repositorio en tu máquina local:
-   ```bash
    git clone [URL del repositorio]
