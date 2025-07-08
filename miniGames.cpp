@@ -26,10 +26,20 @@ Dialog whyYouWentToSeeCreature = {"Le respondes: ", "\nEstoy aquí porque Vícto
 Dialog notHereToListenHimBlindly = {"Le respondes: ", "   ¡No estoy aquí para defenderlo a ciegas! ¡Quiero escuchar tu versión!"};
 Dialog creatureDidntBelieveYourReason = {"Creatura: ", "    Eres un mentiroso. PORQUE TODOS LOS HUMANOS MIENTEN?"};
 
-//Short Dialogs for Case2Evidence3
 
-Dialog xDays = {"Después de x arduos días de viaje por logras llegar a la entrada de la aldea de Sanedrines, Italia, ves a 4 personas y a cada una le decides preguntar por Jekyll,"};
+//Long Dialogs Case 1 evidence 4
 
+gameFilesPrint firstDialogC1 = {"miniGamesTxtFiles/case1/evidencia4/firstDialog.txt"};
+gameFilesPrint dialogHouse234 = {"miniGamesTxtFiles/case1/evidencia4/dialog234.txt"};
+gameFilesPrint dialogHouseRed = {"miniGamesTxtFiles/case1/evidencia4/dialogHouse.txt"};
+gameFilesPrint endDay = {"miniGamesTxtFiles/case1/evidencia4/EndDay.txt"};
+
+//Long Dialog Case 1 evidence 6
+
+gameFilesPrint firstDialogC1E6 = {"miniGamesTxtFiles/case1/evidence6/dialogoComplete.txt"};
+gameFilesPrint endDialog = {"miniGamesTxtFiles/case1/evidence6/dialogAfter.txt"};
+
+//Short Dialog for case2Evidence3
 
 ////////////////////////////////////////////////////////////////
 
@@ -44,16 +54,19 @@ gameFilesPrint ancianaSellingLettuce ={"miniGamesTxtFiles/case2/evidence1/ancian
 gameFilesPrint begginingDay4 = {"miniGamesTxtFiles/case2/evidence1/begginingDay4.txt"};
 
 //Long Dialogs for Case2Evidence2
-gameFilesPrint C2E2Intro = {"miniGamesTxtFiles/case2/evidence2/c2e2Intro.txt"};
-gameFilesPrint ConversationBiblio = {"miniGamesTxtFiles/case2/evidence2/biblioConversation.txt"};
-gameFilesPrint ConversationBiblio2 = {"miniGamesTxtFiles/case2/evidence2/biblioConversation.txt"};
+gameFilesPrint C2Intro = {"miniGamesTxtFiles/case2/evidence2/c2e2Intro.txt"};
+gameFilesPrint biblioConver = {"miniGamesTxtFiles/case2/evidence2/bliblioConver.txt"};
+gameFilesPrint ConversationBiblio2 = {"miniGamesTxtFiles/case2/evidence2/biblioConver2.txt"};
 gameFilesPrint StartDay6 = {"miniGamesTxtFiles/case2/evidence2/startDay6.txt"};
-gameFilesPrint postOption = {"miniGamesTxtFiles/case2/evidence2/postOption"};
+gameFilesPrint postOption = {"miniGamesTxtFiles/case2/evidence2/postOption.txt"};
 
 //Long Dialogs for Case2Evidence3
 gameFilesPrint C2E3intro = {"miniGamesTxtFiles/case2/evidence3/intro.txt"};
 gameFilesPrint Newspaper = {"miniGamesTxtFiles/case2/evidence3/newspaper.txt"};
 gameFilesPrint historyTravel = {"miniGamesTxtFiles/case2/evidence3/historyTravel.txt"};
+gameFilesPrint firstDialog = {"miniGamesTxtFiles/case2/evidence3/dialog.txt"};
+gameFilesPrint xDays = {"miniGamesTxtFiles/case2/evidence3/dialog.txt"};
+gameFilesPrint dialogDr = {"miniGamesTxtFiles/case2/evidence3/dialog2.txt"};
 
 
 
@@ -317,9 +330,8 @@ bool ifYellAtCreature(){ //fixed. Now ends
         cout << "Al tu haberle gritado, la creatura se acerca y te elimina. ";
         exit(EXIT_SUCCESS);
     } 
-
-
 }
+
 bool whyShouldCreatureHelpVictor(){
     string question = "Creatura: \n     ¿POR QUÉ HE YO DE AYUDARLE?! ¡EL SE LO BUSCO!";
     vector<string> options = {
@@ -519,66 +531,125 @@ begginingDay4.showLongDialog();
 }
 
 
-//void selectSuitCase();
 
+// CASE1  Evidencia driario de victor nuevo
 
+bool chosingHouse(){
+    string question = "¿Cuál quieres revisar? ";
+    vector<string> options = {
+        "233",
+	    "234",
+	    "235", 
+	    "236",
+    };
 
-//////////////////// TRABAJOOOOOOOOOO
+    int userChoice =  promptOnce(question, options);
 
-
-void playCase2Evidence3(){ // evidencia 2 segun doc Tesis de Gottfried Wilhelm 6 días:
-    cout << "        ***Empieza el día I ***\n\n";
-    C2E2IntroThought.showLongDialog();
-
-    ConversationBiblio.showLongDialog(); // CONVERSACION LIBRARIO INICIO
-
-    cout << "        ***Empieza el día II*** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día II*** \n\n";
-    cout << "        ***Empieza el día III** \n\n *Rutina de llegas y duermes a la mitad del camino* \n\n ***Termina el día III*** \n\n";
-
-    cout << "        ***Empieza el día IV *** \n\n";
-    
-    ConversationBiblio2.showLongDialog(); // CONVERSACION LIBRARIO NUEVA BIBLIOTECA
-
-    cout << "        ***Empieza el día V *** \n\n";
-    cout << "Empiezas desde temprano y viajas mucho. Se hace noche y te quedas en un hotel a pasar la noche \n";
-    cout << "        ***Fin del día V    *** \n\n";
-
-    cout << "        ***Empieza día VI   *** \n\n";
-
-    StartDay6.showLongDialog();
-
-    // minijuego de opciones una muere
-
-    postOption.showLongDialog(); // CONVERSACION DESPUES DE ELEGIR OPCION CORRECTA
-}
-
-// EVIDENCIA 3 EMPIEZA 
-
-// funtion press X to continue
-void pickUpEvidence() {
-    char pickUpEvidence;
-    while (true) {
-        cin >> pickUpEvidence;
-        if (pickUpEvidence == 'x' || pickUpEvidence == 'X') {
-            Newspaper.showLongDialog(); // muestra los cargos o información
-            break;
-        } else {
-            cout << "Por favor, presione 'x' para seguir.\n";
-        }
+    if (userChoice!=2)
+    {
+        return false; 
     }
+    else{return true;}
+}
+
+bool chosingHouseColor(){
+    string question = "¿Cuál quieres entrar? ";
+    vector<string> options = {
+        "Casa verde",
+	    "Casa amarilla",
+	    "Casa roja", 
+	    "Casa café",
+    };
+
+    int userChoice =  promptOnce(question, options);
+
+    if (userChoice!=3)
+    {
+        return false; 
+    }
+    else{return true;}
+}
+
+bool chosingDoor(){
+    string question = "¿Cuál quieres revisar?? ";
+    vector<string> options = {
+        "1er cuarto a la izquierda ",
+	    "2do cuarto a la izquierda ",
+	    "1er cuarto a la derecha ", 
+	    "2do cuarto a la derecha" ,
+    };
+
+    int userChoice =  promptOnce(question, options);
+
+    if (userChoice!=3)
+    {
+        return false; 
+    }
+    else{return true;}
+}
+
+bool chosingBook(){
+    string question = "¿Cuál quieres leer?? ";
+    vector<string> options = {
+        "Libro rojo",
+	    "Libro azul",
+	    "Libro Blanco", 
+	    "Libro verde" ,
+    };
+
+    int userChoice =  promptOnce(question, options);
+
+    if (userChoice!=4)
+    {
+        return false; 
+    }
+    else{return true;}
+}
+
+void playCase1Evidence4(){
+    cout << "        ***Empieza el día I ***\n\n";
+    firstDialogC1.showLongDialog();
+
+    bool rightHouse = chosingHouse();
+    
+    if (!rightHouse) {
+        cout << "Has elegido una casa incorrecta. \n";
+        return;
+    }
+
+    dialogHouse234.showLongDialog();
+
+    bool rightHouseColor = chosingHouseColor();
+
+    if (!rightHouseColor) {
+        cout << "Has elegido una casa incorrecta. Te matan por pensar que eras un intruso \n";
+        return;
+    }
+
+    dialogHouseRed.showLongDialog();
+
+    bool rightDoor = chosingDoor();
+
+    if (!rightDoor) {
+        cout << "Encontraste una serpiente que se salió de un armario, estaba arriba tuyo y te pica. Mueres \n";
+        return;
+    }
+    
+    cout << "Encuentras 4 libros. Hay de todos colores \n";
+
+    bool rightBook = chosingBook();
+
+
+    if (!rightBook) {
+        cout << "Encontraste libros que no necesitabas \n";
+        return;
+    }
+
+    cout << "Encontraste el libro de Victor \n\n";
+    cout << "Con esta enorme evidencia ya has cumplido tu misión, pero no puedes regresar a casa dado que esta obscuro. Tienes que esperar al dia siguiente \n\n Termina el dia \n\n";
+
+    endDay.showLongDialog();
 }
 
 
-void playCase2Evidence4(){
-    C2E3intro.showLongDialog(); // INTRO A EVIDENCIA
-    
-    pickUpEvidence(); // FUNCION DE X
 
-    historyTravel.showLongDialog(); // HISTORIA DE OPCIONES
-    
-    // INSERTAR MINIJUEGO DE OPCIONES DE ADUANAS
-
-    xDays.showShortDialog();
-
-    // MINIJUEGO DE 4 PERSONAS
-}

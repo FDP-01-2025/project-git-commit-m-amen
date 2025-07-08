@@ -8,6 +8,7 @@
 using namespace std;
 
 void selectEvidence(EstadoJuicio& estado);
+void opcionesIteradas();
 
 #endif
 

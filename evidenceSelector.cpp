@@ -84,3 +84,6 @@ void selectEvidence(EstadoJuicio& estado) {
 
     cout << "Selección finalizada. Total de puntos: " << estado.totalPoints << endl;
 }
+
+
+

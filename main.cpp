@@ -16,13 +16,16 @@ int main()
 {
 
    //playCase1Evidence2();
-   playCase2Evidence2();
+   //playCase2Evidence2();
+
+   //playCase2Evidence3();
    
-   
+   //playCase2Evidence4(); //incompleto
+
+   //playCase1Evidence4();
 
 
-    
-
+   //playCase1Evidence6();
 
     /*
     pedirNombreEjemplo();// this funtion asks the user for its name 
@@ -36,7 +39,7 @@ int main()
     victorRegretful.showLongDialog(); //this dialog shows how Regretful is Victor for the accused crimes he has commited
     menuEvidence(); //with this funtion, the user sees all the evidence and its dialog given by Victor
     EstadoJuicio estado;
-    selectEvidence(estado);
+    
 */
 
 return 0; 

@@ -22,12 +22,16 @@ struct gameFilesPrint{
 };
 extern gameFilesPrint txtDialogFall, evelynTakeArchive, victorInformation, howPresentToVictor, victorPresentationA, victorPresentationB, refleccionAfterReadingFile, victorRegretful, looking4Victor, victorChildhodd, victorMakingofCreature, victorHowCarcel, HistoriaCase1; //Aqui van los que se llaman afuera 
 
+//miniGames.cpp
+extern gameFilesPrint C1E1IntroThought;
 
+//new funtion that will return text as String 
+string getDialogAsString(const gameFilesPrint& diaglogStruct); //agregar esto @ jul 7 12:12am
 
 struct Dialog{
     string character, characterDialog; // this will be useful for short dialog
     void showShortDialog();
 };
 extern Dialog whyArriveLate, llegarTardeA, llegarTardeB, youHave2hrs; //Here you declare the names of the structs you will use later;
-
+extern Dialog fisherman;
 #endif

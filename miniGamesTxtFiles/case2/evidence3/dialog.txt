@@ -1,0 +1,33 @@
+Después de varios días de viaje por fin logras llegar a la entrada de la aldea de Sanedrines, Italia, 
+caminando por la ciudad, explorando y tratando de encontrar lo que necesitas. Observas a un pescador
+con el cual tu decides preguntar si sabe alguna información.
+
+*Te acercas a el*
+
+Usuario:
+    ¡Buen día! Disculpe que lo moleste, ¿usted vive por aquí?
+
+Pescador:
+    Buen día. Sí, llevo más de veinte años pescando en esta costa. ¿En qué puedo ayudarle?
+
+Usuario:
+    Estoy buscando a una persona… Me dijeron que podría estar en este pueblo. Se llama Dr. Jekyll, ¿le suena?
+
+Pescador:
+    ¿Dr. Jekyll, dice? Hmm... ese nombre me suena. ¿Es un hombre mayor, verdad?
+
+Usuario:
+    ¡Sí, ese mismo! ¿Sabe dónde podría encontrarlo?
+
+Pescador:
+    Creo que lo podrias encontrar en la siguiente dirección
+
+Usuario:
+    Muchísimas gracias. Me ha salvado el día.
+
+Pescador:
+    No hay de qué. Solo tenga cuidado con el camino, es algo peligroso andar por esos lugares
+
+Usuario:
+    Empiezas tu camino hacía la dirección que te dió el pescador.
+

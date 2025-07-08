@@ -1,0 +1,28 @@
+Regresas a la cárcel a hablar con Víctor, para ver averiguar la razón verdadera por la que creo a la creatura. 
+Buscas por unos minutos hasta encontrar su celda y hablas con el. 
+
+Víctor: 
+	Por cierto, ¿Qué es lo que te trae a la cárcel? 
+
+Le respondes: 
+El motivo por el que estoy aquí Víctor es porque tengo que hacer una pregunta, 
+y como tu abogado necesito que la respondas con tu completa sinceridad. 
+
+La sonrisa de Víctor desaparece por completo. Se levanta de su silla, volvea a ver al pasillo de la cárcel, 
+y depues se da vuelta para ver hacia la diminuta ventana que tiene su celda al exterio. 
+Mientras sigue viendo por la ventana te dice en una voz muy seria
+
+Victor:
+	La vedad es que siempre me preguntaba ¿Que se sentirá ser Dios? El poder crear un ser desde cero, 
+    el poder hacer algo que ningún ser humano se había atrevido a hacer. 
+    El crear mi propia vida, mi propio humano. ¿Sabes porque lo hice? Lo hice porque quería ser Dios, 
+    quería desafiar todo lo que el mundo pensaba que era imposible. 
+    Mi ego me dijo “Hazlo, que se haga vida nueva” y así fue. Así que mi verdadera razón 
+    para hacer la creatura no es nada de esa mierda del bien común nooo en lo absoluto. 
+    Yo Víctor Frankenstein hice a la creatura para demostrar que estoy al nivel de Dios 
+    si no es que mejor que él ya que si, con toda su omnipotencia apenas ha creado al humano, 
+    ¿Qué puede hacer capaz un simple mortal de hacer ya que ha replicado su obra maestra? 
+
+No crees lo que acabas de escuchar, estas perplejo después de esta confesión de Víctor. 
+No sabes que hacer, ¿Deberías honorar tu profesionalismo y defenderlo hasta las últimas instancias? 
+O ¿Prefieres Abandonar el juicio por completo?
