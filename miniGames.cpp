@@ -759,6 +759,51 @@ void pickUpNewspaper() {
 
 
 
+bool minigameChooseToSannedrines(){ // this funtion is to pick the passport for France
+        string question = "Que cosas deseas empacar para llevar al viaje?: ";
+    vector<string> options = {
+        "Chamarra", 
+        "Maquina de escribir", 
+        "Pasaporte",
+        "Libro para leer"
+    };
+       
+    int userChoice =  promptOnce(question, options);
+    if (userChoice == 3)
+    {
+        return true;
+    }
+    else {return false;}
+}
+
+void playCase2Evidence4(){ // evidencia 3 segun doc
+    C2E3intro.showLongDialog(); // INTRO A EVIDENCIA
+    
+    pickUpNewspaper(); // FUNCION DE X
+
+    historyTravel.showLongDialog(); // HISTORIA DE OPCIONES
+    
+    // INSERTAR MINIJUEGO DE OPCIONES DE ADUANAS
+
+    bool optionCorrect = minigameChooseToSannedrines();
+
+    if (!optionCorrect)
+    {
+        cout << "Opciones equivocadas ";
+        cout << "   No te sirivieron para nada"; return;
+    }
+
+    xDays.showLongDialog();
+
+    cout << "Pasado el tiempo logras llegar a donde tenias que ir \n\n";
+
+    dialogDr.showLongDialog();
+
+    // minijuego 2 opciones
+}
+
+
+
 
 
 
